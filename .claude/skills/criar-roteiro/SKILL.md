@@ -14,6 +14,8 @@ description: Cria um roteiro de vídeo curto com a mesma estrutura de um vídeo 
 4. Regras do dono em `metodo/METODO.md` que falem de roteiro.
 
 ## Como escrever
+- **Cor nunca vem da referência.** Na seção Edição do roteiro e no "Para o editor" da prancheta, a cor é
+  sempre a predefinição de cor da Nexus no Premiere, com a conversão do S-Log2 antes (regra do dono).
 - Parta do **Esqueleto replicável** da análise: mesmos blocos, mesma duração aproximada de cada
   bloco, mesmo tipo de gancho, mesmo ritmo de cortes, mesmo tipo de CTA.
 - Troque o tema, nunca a mecânica. Não copie frases do original; recrie com a voz do dono.

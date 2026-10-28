@@ -17,6 +17,11 @@ Formato:
 
 ---
 
+## 2026-10-28 — roteiros/2026-10-28-efeito-sonoro-conteudo.md (cor) → promovida
+- **Eu disse:** passo a passo para copiar a cor do vídeo de referência no Premiere (correspondência de cor com um frame da referência).
+- **O certo é:** "nos próximos roteiros seja direcionado para usar essa pré-definição que eu já salvei no Premiere. Não quero que a cada vídeo novo e nova referência utilize a cor do vídeo de referência. É um padrão de cor meu, que já foi criado."
+- **Regra geral:** cor é identidade da marca, não da referência. Roteiro e prancheta mandam aplicar a predefinição de cor da Nexus (com a conversão do S-Log2 antes).
+
 ## 2026-10-28 — roteiros/2026-10-28-efeito-sonoro-conteudo.md (prancheta)
 - **Eu disse:** quadros soltos em cartões, um por enquadramento, com um boneco de círculos segurando microfone.
 - **O certo é:** "o ideal é que seja de fato como se fosse cada página, em uma folha horizontal: do lado esquerdo o frame (o ângulo) e do lado direito as falas daquela faixa de tempo. Pode mostrar um ângulo ou quatro." Boneco anônimo — "ninguém saber quem é" —, sem ser humanoide detalhado, sem microfone.

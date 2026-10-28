@@ -14,6 +14,7 @@ Este é o jeito de assistir a um vídeo. Ele **evolui**: cada correção vira um
 
 - [2026-10-28] Roteiros: o dono fala "conteúdos" / "conteúdos estratégicos", **nunca** "vídeo de empresa" ou "vídeo do seu negócio". Vale para fala, texto na tela e legenda do post. (origem: roteiros/2026-10-28-efeito-sonoro-conteudo.md)
 - [2026-10-28] Roteiros e pranchetas: formato **sempre 9:16 (Reels)**, gravado em pé. Nunca incluir orientação para câmera deitada/16:9 ou outro formato, a não ser que o dono avise que aquele conteúdo é diferente. (origem: roteiros/2026-10-28-efeito-sonoro-conteudo.md)
+- [2026-10-28] Cor: todo roteiro direciona para a **predefinição de cor da Nexus** já salva no Premiere (padrão de cor do dono), com a conversão do S-Log2 antes. **Nunca** orientar a copiar a cor do vídeo de referência. (origem: ajuste de cor do roteiro roteiros/2026-10-28-efeito-sonoro-conteudo.md)
 
 ---
 

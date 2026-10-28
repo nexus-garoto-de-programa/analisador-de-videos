@@ -28,6 +28,7 @@ Recomendado: <n> porque <…>.
 - Música: <sugestão; mesma energia/BPM do original> · corte na batida: <sim/não>
 - Legendas: <estilo>
 - Efeitos: <lista com tempo>
+- Cor: **predefinição de cor da Nexus** salva no Premiere (padrão de todos os vídeos). Antes, converta o S-Log2: clipe → Modificar → Interpretar gravação → Gerenciamento de cores → **Sony S-Log2/S-Gamut**. **Não copiar a cor do vídeo de referência.**
 
 ## Legenda do post
 <primeira linha como gancho> …

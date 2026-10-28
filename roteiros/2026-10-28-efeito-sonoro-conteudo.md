@@ -56,6 +56,7 @@ Se você quer a lista dos sites onde eu pego todos os meus efeitos *de graça*, 
 - [ ] Lugar / luz / figurino: o mesmo canto de trabalho, luz quente e lateral, roupa com textura (jaqueta, camisa) — algo que pareça "estúdio de criador", não fundo neutro vazio.
 
 ## Edição
+- Cor: **predefinição de cor da Nexus** salva no Premiere (padrão de todos os vídeos). Antes, converta o S-Log2: clipe → Modificar → Interpretar gravação → Gerenciamento de cores → **Sony S-Log2/S-Gamut**. **Não copiar a cor do vídeo de referência.**
 - Música: trilha instrumental contínua de energia média (~120–132 BPM, lo-fi/house leve), **mais baixa que no original** (a voz e os efeitos têm que aparecer) · corte na batida: não (os cortes seguem a fala, palavra por palavra).
 - Legendas: gancho [0–4 s] em fonte bold gigante, branca, 1 palavra, no topo, "CONTEÚDOS" e "CREMOSOS" em roxo (cor da marca); resto em fonte fina, pequena, branca, 1–2 palavras, centro. No CapCut: legenda automática e depois ajuste o estilo em dois blocos.
 - Efeitos (CapCut tem biblioteca em "Áudio → Efeitos"; no Premiere, use a lista que você vai mandar no CTA):
