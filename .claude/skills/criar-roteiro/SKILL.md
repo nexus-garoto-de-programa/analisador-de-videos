@@ -31,6 +31,8 @@ Material para o dono e para um videomaker gravarem sem precisar ler o roteiro in
   entra o texto, área da interface do Instagram, notas curtas e a fala daquele ângulo. Inclua os extras
   (entrada em movimento, mão na lente…) e o quadro "câmera deitada (16:9)", porque o dono grava em câmera.
 - Faixa "onde cada enquadramento entra" com as cenas e os tempos; "Ordem de gravação" em passos para o videomaker.
+- Seção "Para o editor": "A intenção (não pode faltar)" — as mecânicas que fazem o vídeo funcionar — e
+  "Fica a seu critério". O dono confia na criatividade do editor: oriente a intenção, não trave.
 - Gere o PNG (Playwright, página inteira, 1240 px, escala 2) ao lado do HTML, publique a página como
   Artifact e ponha os dois links no topo do roteiro.
 

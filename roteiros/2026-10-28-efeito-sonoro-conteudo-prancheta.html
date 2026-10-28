@@ -80,6 +80,14 @@ ol.steps p { margin: 0; font-size: 14px; }
 ol.steps q { quotes: "“" "”"; font-style: italic; }
 .fala { margin: 0 14px 14px; padding: 8px 10px; border-left: 3px solid var(--accent); background: var(--bg); font-size: 13.5px; }
 .fala b { display: block; font: 500 10.5px/1.3 var(--mono); text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.editor { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
+.editor > div { background: var(--paper); border: 1px solid var(--line); padding: 14px 16px 16px; min-width: 0; }
+.editor > div.must { border-top: 4px solid var(--accent); }
+.editor > div.free { border-top: 4px solid var(--b); }
+.editor h3 { margin: 0 0 8px; font: 700 18px/1.1 var(--display); text-transform: uppercase; }
+.editor ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 14px; }
+.editor .why { color: var(--muted); }
+.note { margin: 0 0 12px; max-width: 72ch; }
 @media print { body { background: #fff; } .card, ol.steps li { break-inside: avoid; } .strip-box { overflow: visible; } }
 footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 12px; }
 </style>
@@ -88,7 +96,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
   <header>
     <div class="slate"><span>Roteiro <b>efeito sonoro — conteúdos cremosos</b></span><span>Formato <b>9:16 · ~33 s</b></span><span>Gravação <b>sozinho · câmera no tripé</b></span><span>Grade <b>3 × 3</b></span></div>
     <h1>Prancheta de <span>enquadramento</span></h1>
-    <p class="lead">Só existem dois enquadramentos para gravar: o Ângulo A (gancho) e o Ângulo B (todo o resto da fala). O resto do vídeo sai do seu acervo ou é montado na edição. Use os quadros como referência na grade da câmera; o passo a passo no fim serve para você ou para quem estiver filmando.</p>
+    <p class="lead">Só existem dois enquadramentos para gravar: o Ângulo A (gancho) e o Ângulo B (todo o resto da fala). O resto do vídeo sai do seu acervo ou é montado na edição. Use os quadros como referência na grade da câmera; a ordem de gravação serve para quem estiver filmando, e a parte "Para o editor" explica a intenção da edição.</p>
   </header>
 
   <section>
@@ -117,6 +125,30 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
       <li><h3>Extras</h3><p>Mão na lente, se o vídeo de exemplo não tiver.</p></li>
       <li><h3>Separe o acervo</h3><p>3 trechos editados (cena 3) · 1 vídeo cru + 1 editado (cenas 4–5) · 1 com texto animado (cena 9) · 1 com overlay · 1 com exemplo visual.</p></li>
     </ol>
+  </section>
+
+  <section>
+    <h2>Para o editor</h2>
+    <p class="note">Isto é um norte, não uma receita. Os tempos do roteiro são referência. Confio na sua criatividade: se tiver uma ideia melhor, faça e me mostre. Só não deixe a intenção da coluna da esquerda se perder.</p>
+    <div class="editor">
+      <div class="must"><h3>A intenção (não pode faltar)</h3><ul>
+        <li>Gancho com texto gigante, palavra por palavra, no topo, com <b>CONTEÚDOS</b> e <b>CREMOSOS</b> em destaque. Depois do gancho, legenda pequena e discreta. <span class="why">O texto grande é só para segurar os 3 primeiros segundos.</span></li>
+        <li>Cortes caindo exatamente na palavra: troca de ângulo no gancho, no "disso / pra isso" e em cada item da lista.</li>
+        <li>O "antes" (vídeo cru) em <b>silêncio total</b>. <span class="why">O contraste é a prova do que o vídeo ensina.</span></li>
+        <li>Antes de "Efeito sonoro", um respiro curto de silêncio e depois o impacto.</li>
+        <li>Cada item da lista toca o efeito que ele ensina (texto de abertura, overlays, transições, exemplos visuais).</li>
+        <li>Algo novo na tela a cada ~1,5 s até o CTA.</li>
+        <li>CTA limpo: plano parado, sem efeitos, "SOM" bem visível.</li>
+      </ul></div>
+      <div class="free"><h3>Fica a seu critério</h3><ul>
+        <li>Fontes, cores e animação das legendas, desde que o destaque continue claro.</li>
+        <li>Quais efeitos sonoros exatos usar e onde mais colocar.</li>
+        <li>A trilha: sugestão de energia média, sempre abaixo da voz.</li>
+        <li>Transições, zooms, b-roll extra e a ordem dos trechos do acervo.</li>
+        <li>O visual das molduras e dos slides; o branco é só uma sugestão.</li>
+        <li>Cortar ou estender um bloco se o ritmo pedir.</li>
+      </ul></div>
+    </div>
   </section>
 
   <section>
