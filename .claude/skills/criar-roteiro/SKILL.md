@@ -24,17 +24,17 @@ description: Cria um roteiro de vídeo curto com a mesma estrutura de um vídeo 
 - Preencha `templates/roteiro.md` e salve em `roteiros/AAAA-MM-DD-<tema>.md`.
 
 ## Prancheta de enquadramento (sempre junto do roteiro)
-Material para o dono e para um videomaker gravarem sem precisar ler o roteiro inteiro (no futuro, para imprimir).
+Material para o dono, o videomaker e o editor (e para imprimir).
 - Copie `templates/prancheta.html` para `roteiros/AAAA-MM-DD-<tema>-prancheta.html` e troque só os dados
-  `CENAS` e `QUADROS` no `<script>` (e os textos do cabeçalho e da ordem de gravação).
-- Um quadro por **enquadramento** (não por cena), desenhado na grade 3×3 em 9:16: linha dos olhos, onde
-  entra o texto, área da interface do Instagram, notas curtas e a fala daquele ângulo. Inclua os extras
-  (entrada em movimento, mão na lente…). Formato sempre 9:16 (Reels), salvo se o dono avisar outro.
-- Faixa "onde cada enquadramento entra" com as cenas e os tempos; "Ordem de gravação" em passos para o videomaker.
-- Seção "Para o editor": "A intenção (não pode faltar)" — as mecânicas que fazem o vídeo funcionar — e
+  `ROTEIRO`, `CENAS`, `FOLHAS` e `FECHAMENTO` no `<script>`.
+- **Folhas A4 deitadas**, uma por faixa de tempo (~3 folhas para ~30 s): à esquerda, de 1 a 4 quadros
+  dos ângulos daquela faixa (9:16, grade 3×3, linha dos olhos, onde entra o texto, interface do Instagram);
+  à direita, as falas da faixa com tempo, ângulo e uma linha discreta de "tela" e "som".
+- O boneco é uma **silhueta anônima** (sem rosto, sem microfone, sem detalhes). Formato sempre 9:16.
+- Última folha: "Ordem de gravação" (videomaker) e "Para o editor": "A intenção (não pode faltar)" e
   "Fica a seu critério". O dono confia na criatividade do editor: oriente a intenção, não trave.
-- Gere o PNG (Playwright, página inteira, 1240 px, escala 2) ao lado do HTML, publique a página como
-  Artifact e ponha os dois links no topo do roteiro.
+- Gere o PDF (Playwright `page.pdf`, `preferCSSPageSize`) e um PNG das folhas ao lado do HTML, publique a
+  página como Artifact e ponha os links no topo do roteiro.
 
 ## Entregar
 - Roteiro novo nasce com status `rascunho`. Quando o dono aprovar, siga a skill `treinar`

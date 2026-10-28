@@ -17,6 +17,11 @@ Formato:
 
 ---
 
+## 2026-10-28 — roteiros/2026-10-28-efeito-sonoro-conteudo.md (prancheta)
+- **Eu disse:** quadros soltos em cartões, um por enquadramento, com um boneco de círculos segurando microfone.
+- **O certo é:** "o ideal é que seja de fato como se fosse cada página, em uma folha horizontal: do lado esquerdo o frame (o ângulo) e do lado direito as falas daquela faixa de tempo. Pode mostrar um ângulo ou quatro." Boneco anônimo — "ninguém saber quem é" —, sem ser humanoide detalhado, sem microfone.
+- **Regra geral:** prancheta = folhas A4 deitadas por faixa de tempo (ângulos à esquerda, falas à direita, com uma linha discreta de tela/som), silhueta anônima, última folha com ordem de gravação e notas para o editor.
+
 ## 2026-10-28 — roteiros/2026-10-28-efeito-sonoro-conteudo.md (prancheta) → promovida
 - **Eu disse:** quadro "Se a câmera estiver deitada (16:9)", com recorte 9:16 e zoom digital em 4K.
 - **O certo é:** "eu nunca vou fazer isso. Eu sempre vou gravar o vídeo em 9:16, que sempre vai ser para versão Reels. Quando for um conteúdo diferenciado, que eu vou gravar no formato diferente, aí eu vou falar."

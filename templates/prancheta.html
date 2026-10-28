@@ -3,311 +3,345 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&family=JetBrains+Mono:wght@500&display=swap">
 <style>
-/* Layout: prancheta de diretor — cabeçalho tipo claquete, faixa de cenas, grade de quadros 9:16 com notas */
+/* Layout: folhas de prancheta deitadas (A4 paisagem). Em cada folha: quadros à esquerda, falas à direita. */
 :root {
-  --bg: #e9ebee; --paper: #f7f8f9; --fg: #1b1f24; --muted: #5b636e; --line: #cdd2d8;
-  --accent: #f5d000; --accent-ink: #1b1f24; --b: #4c8dd6; --stock: #9aa3ad;
-  /* o "visor" da câmera é sempre escuro, nos dois temas */
-  --vf-bg: #20252b; --vf-wall: #2c333b; --vf-desk: #6b5f52; --vf-body: #8b96a3; --vf-head: #b4bdc7;
-  --vf-grid: rgba(255,255,255,.6); --vf-ui: rgba(255,90,90,.22); --vf-text: #ffffff; --vf-ghost: rgba(180,189,199,.35);
+  --bg: #dfe2e6; --sheet: #fbfbfc; --fg: #1b1f24; --muted: #66707b; --line: #d5dae0; --soft: #f0f2f4;
+  --accent: #f5d000; --accent-ink: #1b1f24; --b: #3f7fc8; --stock: #8c96a1;
+  /* o visor da câmera é escuro nos dois temas; cartelas e slides são brancos */
+  --vf-wall-1: #333a42; --vf-wall-2: #262b31; --vf-desk: #6e6256; --vf-body: #8a95a2; --vf-head: #a2acb7;
+  --vf-grid: rgba(255,255,255,.55); --vf-white: #f6f7f8; --vf-ink: #22272d;
   --display: "Barlow Condensed", "Arial Narrow", sans-serif;
   --body: "Barlow", "Helvetica Neue", Arial, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --bg: #14171b; --paper: #1d2126; --fg: #e8ebee; --muted: #9aa3ad; --line: #30363d;
-  --accent: #f5d000; --accent-ink: #14171b; --b: #6fa6e6; --stock: #6b7480; color-scheme: dark } }
+  --bg: #121518; --sheet: #1b1f24; --fg: #e8ebee; --muted: #9aa3ad; --line: #2e343b; --soft: #23282e;
+  --b: #6fa6e6; --stock: #6b7480; color-scheme: dark } }
 :root[data-theme="dark"] {
-  --bg: #14171b; --paper: #1d2126; --fg: #e8ebee; --muted: #9aa3ad; --line: #30363d;
-  --accent: #f5d000; --accent-ink: #14171b; --b: #6fa6e6; --stock: #6b7480; color-scheme: dark }
+  --bg: #121518; --sheet: #1b1f24; --fg: #e8ebee; --muted: #9aa3ad; --line: #2e343b; --soft: #23282e;
+  --b: #6fa6e6; --stock: #6b7480; color-scheme: dark }
 
-body { background: var(--bg); color: var(--fg); font: 15px/1.5 var(--body); }
-.wrap { max-width: 1180px; margin: 0 auto; padding-block: 28px 48px;
+*, *::before, *::after { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--body); }
+.wrap { padding-block: 24px 48px;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
-  display: grid; gap: 28px; }
-.wrap > * { min-width: 0; }
+  display: grid; gap: 24px; justify-items: center; }
+.wrap > * { min-width: 0; width: 100%; max-width: 1123px; }
 
-header { display: grid; gap: 10px; border-bottom: 2px solid var(--fg); padding-bottom: 16px; }
-.slate { display: flex; flex-wrap: wrap; gap: 6px 18px; font: 500 12px/1.4 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
-.slate b { color: var(--fg); font-weight: 500; }
-h1 { font: 700 clamp(30px, 5vw, 46px)/1 var(--display); letter-spacing: .01em; margin: 0; text-transform: uppercase; text-wrap: balance; }
-h1 span { background: var(--accent); color: var(--accent-ink); padding: 0 .15em; }
-.lead { margin: 0; max-width: 68ch; color: var(--muted); }
+.page { background: var(--sheet); aspect-ratio: 297 / 210; padding: 26px 30px 18px; box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 8px 24px rgba(0,0,0,.06);
+  display: grid; grid-template-rows: auto 1fr auto; gap: 16px; }
 
-h2 { font: 700 20px/1.1 var(--display); text-transform: uppercase; letter-spacing: .04em; margin: 0 0 10px; }
+.head { display: grid; grid-template-columns: 1fr auto; gap: 6px 20px; align-items: end; border-bottom: 2px solid var(--fg); padding-bottom: 10px; }
+.slate { font: 500 11px/1.4 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+.head h2 { grid-column: 1; margin: 0; font: 700 30px/1 var(--display); text-transform: uppercase; letter-spacing: .01em; text-wrap: balance; }
+.head h2 em { font-style: normal; background: var(--accent); color: var(--accent-ink); padding: 0 .12em; }
+.pg { grid-column: 2; grid-row: 1 / 3; text-align: right; font: 700 34px/1 var(--display); }
+.pg small { display: block; font: 500 11px/1.4 var(--mono); color: var(--muted); letter-spacing: .05em; text-transform: uppercase; }
+.mini { grid-column: 1 / -1; display: flex; height: 8px; margin-top: 6px; }
+.mini span { border-right: 1px solid var(--sheet); opacity: .28; }
+.mini span.on { opacity: 1; }
+.k-A { background: var(--accent); } .k-B { background: var(--b); } .k-S { background: var(--stock); }
+.k-C { background: repeating-linear-gradient(135deg, var(--muted) 0 2px, transparent 2px 5px); }
 
-.strip-box { overflow-x: auto; }
-.strip { min-width: 680px; display: flex; height: 54px; border: 1px solid var(--line); background: var(--paper); }
-.seg { position: relative; border-right: 1px solid var(--bg); display: flex; align-items: flex-end; padding: 4px 5px; font: 600 12px/1 var(--display); letter-spacing: .03em; overflow: hidden; min-width: 0; }
-.seg small { position: absolute; top: 5px; left: 5px; font: 500 10px/1 var(--mono); opacity: .8; }
-.seg.A { background: var(--accent); color: var(--accent-ink); }
-.seg.B { background: var(--b); color: #fff; }
-.seg.S { background: var(--stock); color: #fff; }
-.seg.C { background: var(--paper); color: var(--muted); background-image: repeating-linear-gradient(135deg, transparent 0 6px, var(--line) 6px 7px); }
-.keys { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 10px; font-size: 13px; color: var(--muted); }
-.keys i { display: inline-block; width: 12px; height: 12px; vertical-align: -1px; margin-right: 6px; border: 1px solid var(--line); }
-
-.board { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 18px; }
-.card { background: var(--paper); border: 1px solid var(--line); display: grid; grid-template-rows: auto auto 1fr; min-width: 0; }
-.frame { padding: 14px 14px 0; display: flex; justify-content: center; }
-.frame svg { display: block; width: 100%; max-width: 230px; height: auto; }
-.tag { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; padding: 12px 14px 4px; }
-.tag h3 { margin: 0; font: 700 19px/1.1 var(--display); text-transform: uppercase; letter-spacing: .02em; }
-.tag .tc { font: 500 11px/1.3 var(--mono); color: var(--muted); text-align: right; white-space: nowrap; }
-.chip { display: inline-block; font: 700 11px/1 var(--display); letter-spacing: .06em; padding: 3px 6px 2px; margin-right: 6px; vertical-align: 2px; }
+.body { display: grid; grid-template-columns: 1.3fr 1fr; gap: 28px; min-height: 0; }
+.frames { display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 14px; align-content: start; }
+.fr { display: grid; gap: 6px; align-content: start; min-width: 0; margin: 0; }
+.fr svg { display: block; width: 100%; max-width: 230px; height: auto; border-radius: 2px; }
+.fr h3 { margin: 2px 0 0; font: 700 15px/1.1 var(--display); text-transform: uppercase; letter-spacing: .02em; }
+.fr .t { font: 500 10.5px/1.2 var(--mono); color: var(--muted); }
+.fr p { margin: 0; font-size: 12.5px; line-height: 1.35; color: var(--muted); }
+.chip { display: inline-block; font: 700 10px/1 var(--display); letter-spacing: .07em; padding: 3px 5px 2px; text-transform: uppercase; }
 .chip.A { background: var(--accent); color: var(--accent-ink); }
 .chip.B { background: var(--b); color: #fff; }
-.chip.X { background: var(--fg); color: var(--paper); }
-.card ul { margin: 0; padding: 4px 14px 16px 30px; display: grid; gap: 4px; align-content: start; font-size: 14px; }
-.card li::marker { color: var(--muted); }
+.chip.S { background: var(--stock); color: #fff; }
+.chip.C { box-shadow: inset 0 0 0 1px var(--muted); color: var(--muted); }
 
-.legend { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px 24px; font-size: 14px; }
-.legend div { display: flex; gap: 10px; align-items: flex-start; }
-.sw { flex: none; width: 28px; height: 18px; margin-top: 2px; border: 1px solid var(--line); background: var(--vf-bg); }
-.sw.grid { background: linear-gradient(90deg, transparent 13px, #fff 13px 15px, transparent 15px), var(--vf-bg); }
-.sw.eye { background: linear-gradient(transparent 8px, var(--accent) 8px 10px, transparent 10px), var(--vf-bg); }
-.sw.ui { background: repeating-linear-gradient(135deg, rgba(255,90,90,.55) 0 3px, transparent 3px 6px), var(--vf-bg); }
-.sw.txt { background: linear-gradient(transparent 4px, var(--accent) 4px 14px, transparent 14px), var(--vf-bg); }
-ol.steps { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; counter-reset: s; }
-ol.steps li { counter-increment: s; background: var(--paper); border: 1px solid var(--line); padding: 12px 14px 14px; display: grid; gap: 6px; align-content: start; min-width: 0; }
-ol.steps li::before { content: "Passo " counter(s); font: 500 11px/1 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
-ol.steps h3 { margin: 0; font: 700 18px/1.1 var(--display); text-transform: uppercase; }
-ol.steps p { margin: 0; font-size: 14px; }
-ol.steps q { quotes: "“" "”"; font-style: italic; }
-.fala { margin: 0 14px 14px; padding: 8px 10px; border-left: 3px solid var(--accent); background: var(--bg); font-size: 13.5px; }
-.fala b { display: block; font: 500 10.5px/1.3 var(--mono); text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
-.editor { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
-.editor > div { background: var(--paper); border: 1px solid var(--line); padding: 14px 16px 16px; min-width: 0; }
-.editor > div.must { border-top: 4px solid var(--accent); }
-.editor > div.free { border-top: 4px solid var(--b); }
-.editor h3 { margin: 0 0 8px; font: 700 18px/1.1 var(--display); text-transform: uppercase; }
-.editor ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 14px; }
-.editor .why { color: var(--muted); }
-.note { margin: 0 0 12px; max-width: 72ch; }
-@media print { body { background: #fff; } .card, ol.steps li { break-inside: avoid; } .strip-box { overflow: visible; } }
-footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 12px; }
+.lines { display: grid; align-content: start; border-left: 1px solid var(--line); padding-left: 24px; min-width: 0; }
+.lines h4 { margin: 0 0 8px; font: 500 11px/1 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.ln { display: grid; grid-template-columns: 74px 1fr; gap: 2px 12px; padding: 9px 0; border-top: 1px solid var(--line); }
+.lines h4 + .ln { border-top: 0; }
+.ln .tc { font: 500 11px/1.5 var(--mono); color: var(--muted); display: grid; gap: 4px; align-content: start; justify-items: start; }
+.ln .say { font: 500 17px/1.35 var(--body); text-wrap: pretty; }
+.ln .say b { background: linear-gradient(transparent 58%, rgba(245,208,0,.55) 58%); font-weight: 600; }
+.ln .meta { grid-column: 2; font-size: 12px; line-height: 1.4; color: var(--muted); }
+.ln .meta i { font-style: normal; font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: .05em; margin-right: 4px; }
+
+.foot { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 11.5px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 8px; }
+.foot .sw { display: inline-block; width: 18px; height: 10px; margin-right: 5px; vertical-align: -1px; }
+.sw.grid { background: linear-gradient(90deg, transparent 8px, #fff 8px 9px, transparent 9px), #2b3138; }
+.sw.eye { background: linear-gradient(transparent 4px, var(--accent) 4px 6px, transparent 6px), #2b3138; }
+.sw.txt { background: linear-gradient(transparent 2px, var(--accent) 2px 8px, transparent 8px), #2b3138; }
+.sw.ui { background: repeating-linear-gradient(135deg, rgba(255,110,110,.7) 0 2px, transparent 2px 4px), #2b3138; }
+
+/* folha final */
+.closing { display: grid; grid-template-columns: 1fr 1.35fr; gap: 28px; min-height: 0; }
+.closing h3 { margin: 0 0 10px; font: 700 20px/1 var(--display); text-transform: uppercase; letter-spacing: .03em; }
+ol.steps { margin: 0; padding: 0; list-style: none; counter-reset: s; display: grid; gap: 9px; }
+ol.steps li { counter-increment: s; display: grid; grid-template-columns: 26px 1fr; gap: 0 10px; font-size: 13.5px; line-height: 1.4; }
+ol.steps li::before { content: counter(s); grid-row: 1 / 3; font: 700 22px/1 var(--display); color: var(--muted); }
+ol.steps b { font: 700 15px/1.2 var(--display); text-transform: uppercase; letter-spacing: .02em; }
+.ed-note { margin: 0 0 10px; font-size: 13.5px; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.cols > div { background: var(--soft); padding: 10px 12px 12px; border-top: 3px solid var(--accent); min-width: 0; }
+.cols > div.free { border-top-color: var(--b); }
+.cols h4 { margin: 0 0 6px; font: 700 14px/1.1 var(--display); text-transform: uppercase; letter-spacing: .03em; }
+.cols ul { margin: 0; padding-left: 16px; display: grid; gap: 4px; font-size: 12.5px; line-height: 1.38; }
+.cols .why { color: var(--muted); }
+
+@media screen and (max-width: 860px) {
+  .page { aspect-ratio: auto; padding: 18px 16px 14px; }
+  .body, .closing, .cols { grid-template-columns: 1fr; }
+  .frames { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lines { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 12px; }
+  .head h2 { font-size: 24px; }
+}
+@media print {
+  @page { size: A4 landscape; margin: 0; }
+  :root { --bg: #fff; --sheet: #fff; --fg: #1b1f24; --muted: #66707b; --line: #d5dae0; --soft: #f0f2f4; --b: #3f7fc8; --stock: #8c96a1; color-scheme: light; }
+  body { background: #fff; }
+  .wrap { padding: 0; gap: 0; }
+  .wrap > * { max-width: none; }
+  .page { width: 297mm; height: 210mm; aspect-ratio: auto; box-shadow: none; break-after: page; overflow: hidden; }
+}
 </style>
 
-<div class="wrap">
-  <header>
-    <div class="slate"><span>Roteiro <b>efeito sonoro — conteúdos cremosos</b></span><span>Formato <b>9:16 (Reels) · ~33 s</b></span><span>Gravação <b>sozinho · câmera no tripé</b></span><span>Grade <b>3 × 3</b></span></div>
-    <h1>Prancheta de <span>enquadramento</span></h1>
-    <p class="lead">Só existem dois enquadramentos para gravar: o Ângulo A (gancho) e o Ângulo B (todo o resto da fala). O resto do vídeo sai do seu acervo ou é montado na edição. Use os quadros como referência na grade da câmera; a ordem de gravação serve para quem estiver filmando, e a parte "Para o editor" explica a intenção da edição.</p>
-  </header>
-
-  <section>
-    <h2>Onde cada enquadramento entra</h2>
-    <div class="strip-box"><div class="strip" id="strip"></div></div>
-    <div class="keys">
-      <span><i style="background:var(--accent)"></i>Ângulo A</span>
-      <span><i style="background:var(--b)"></i>Ângulo B</span>
-      <span><i style="background:var(--stock)"></i>Acervo (vídeos antigos)</span>
-      <span><i style="background-image:repeating-linear-gradient(135deg,transparent 0 3px,var(--line) 3px 4px)"></i>Cartela ou slide (só edição)</span>
-    </div>
-  </section>
-
-  <section>
-    <h2>Quadros</h2>
-    <div class="board" id="board"></div>
-  </section>
-
-  <section>
-    <h2>Ordem de gravação · para você ou para o videomaker</h2>
-    <ol class="steps">
-      <li><h3>Monte o Ângulo B</h3><p>Tripé um pouco acima dos olhos, mesa em primeiro plano. Marque os pés do tripé com fita.</p></li>
-      <li><h3>Grave as falas do B</h3><p>Cenas 2, 6, 7, 11 e 16. Grave o texto inteiro de uma vez, 2 ou 3 takes. Na edição só se usa o que é do B.</p></li>
-      <li><h3>Mude para o Ângulo A</h3><p>Câmera na altura dos olhos, mais perto. Deixe espaço acima da cabeça para o texto gigante.</p></li>
-      <li><h3>Grave o gancho no A</h3><p>Cena 1 com a entrada em movimento. De 3 a 5 takes: é o trecho mais importante do vídeo. Termine a frase inteira (<q>…e passam a ser cremosos</q>) para ter a opção de corte.</p></li>
-      <li><h3>Extras</h3><p>Mão na lente, se o vídeo de exemplo não tiver.</p></li>
-      <li><h3>Separe o acervo</h3><p>3 trechos editados (cena 3) · 1 vídeo cru + 1 editado (cenas 4–5) · 1 com texto animado (cena 9) · 1 com overlay · 1 com exemplo visual.</p></li>
-    </ol>
-  </section>
-
-  <section>
-    <h2>Para o editor</h2>
-    <p class="note">Isto é um norte, não uma receita. Os tempos do roteiro são referência. Confio na sua criatividade: se tiver uma ideia melhor, faça e me mostre. Só não deixe a intenção da coluna da esquerda se perder.</p>
-    <div class="editor">
-      <div class="must"><h3>A intenção (não pode faltar)</h3><ul>
-        <li>Gancho com texto gigante, palavra por palavra, no topo, com <b>CONTEÚDOS</b> e <b>CREMOSOS</b> em destaque. Depois do gancho, legenda pequena e discreta. <span class="why">O texto grande é só para segurar os 3 primeiros segundos.</span></li>
-        <li>Cortes caindo exatamente na palavra: troca de ângulo no gancho, no "disso / pra isso" e em cada item da lista.</li>
-        <li>O "antes" (vídeo cru) em <b>silêncio total</b>. <span class="why">O contraste é a prova do que o vídeo ensina.</span></li>
-        <li>Antes de "Efeito sonoro", um respiro curto de silêncio e depois o impacto.</li>
-        <li>Cada item da lista toca o efeito que ele ensina (texto de abertura, overlays, transições, exemplos visuais).</li>
-        <li>Algo novo na tela a cada ~1,5 s até o CTA.</li>
-        <li>CTA limpo: plano parado, sem efeitos, "SOM" bem visível.</li>
-      </ul></div>
-      <div class="free"><h3>Fica a seu critério</h3><ul>
-        <li>Fontes, cores e animação das legendas, desde que o destaque continue claro.</li>
-        <li>Quais efeitos sonoros exatos usar e onde mais colocar.</li>
-        <li>A trilha: sugestão de energia média, sempre abaixo da voz.</li>
-        <li>Transições, zooms, b-roll extra e a ordem dos trechos do acervo.</li>
-        <li>O visual das molduras e dos slides; o branco é só uma sugestão.</li>
-        <li>Cortar ou estender um bloco se o ritmo pedir.</li>
-      </ul></div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Como ler os quadros</h2>
-    <div class="legend">
-      <div><span class="sw grid"></span><span><b>Grade 3 × 3</b>: a mesma da câmera. A coluna do meio é o seu lugar.</span></div>
-      <div><span class="sw eye"></span><span><b>Linha dos olhos</b>: onde seus olhos devem ficar.</span></div>
-      <div><span class="sw txt"></span><span><b>Texto</b>: onde a legenda vai entrar na edição. Não coloque rosto nem gesto importante ali.</span></div>
-      <div><span class="sw ui"></span><span><b>Interface do Instagram</b> (aproximada): nome, legenda e botões cobrem essa área.</span></div>
-    </div>
-  </section>
-
-  <footer>Baseado em analises/2026-10-28-DbJEDXOxgkC · roteiros/2026-10-28-efeito-sonoro-conteudo.md</footer>
-</div>
+<div class="wrap" id="wrap"></div>
 
 <script>
-// Dados da prancheta: para um roteiro novo, troque só CENAS e QUADROS.
-const CENAS = [
-  { n: "1", t: [0, 2.7], k: "A", nome: "gancho" },
-  { n: "2", t: [2.7, 4], k: "B", nome: "gancho" },
-  { n: "3–5", t: [4, 9.2], k: "S", nome: "série + antes/depois" },
-  { n: "6–7", t: [9.2, 13.9], k: "B", nome: "mistério" },
-  { n: "8", t: [13.9, 14.9], k: "C", nome: "revelação" },
-  { n: "9", t: [14.9, 18.8], k: "S", nome: "exemplo" },
-  { n: "10", t: [18.8, 19.7], k: "C", nome: "ex. 2" },
-  { n: "11", t: [19.7, 22], k: "B", nome: "re-gancho" },
-  { n: "12–15", t: [22, 27], k: "C", nome: "lista (4 slides)" },
-  { n: "16", t: [27, 33.5], k: "B", nome: "CTA" },
+// Dados da prancheta. Para um roteiro novo, troque ROTEIRO, CENAS, FOLHAS e FECHAMENTO.
+const ROTEIRO = "Efeito sonoro · conteúdos cremosos · 9:16 (Reels) · ~33 s";
+
+const CENAS = [ // faixa colorida do topo de cada folha
+  { t: [0, 2.7], k: "A" }, { t: [2.7, 4], k: "B" }, { t: [4, 9.2], k: "S" }, { t: [9.2, 13.9], k: "B" },
+  { t: [13.9, 14.9], k: "C" }, { t: [14.9, 18.8], k: "S" }, { t: [18.8, 19.7], k: "C" }, { t: [19.7, 22], k: "B" },
+  { t: [22, 27], k: "C" }, { t: [27, 33.5], k: "B" },
 ];
 
-const QUADROS = [
-  { chip: "A", titulo: "Ângulo A · médio-fechado", tc: "cena 1\n0–2,7 s", desenho: "A",
-    fala: "É assim que os seus conteúdos deixam de ser chatos…",
-    notas: ["Olhos logo abaixo da linha de cima: o terço de cima é do texto gigante.",
-            "Rosto na coluna do meio; ombros ocupando ~70% da largura.",
-            "Câmera na altura dos olhos, sem inclinar.",
-            "Microfone na mão, na altura do peito; dedo apontando para a lente."] },
-  { chip: "A", titulo: "Ângulo A · entrada", tc: "início da cena 1\n0–0,3 s", desenho: "entrada",
-    notas: ["Comece meio passo fora do centro e entre no quadro, ou se ajeite na cadeira.",
-            "A 1ª palavra sai já chegando na posição do Ângulo A.",
-            "O 1º frame precisa ter movimento, nunca imagem parada."] },
-  { chip: "B", titulo: "Ângulo B · aberto com mesa", tc: "cenas 2, 6, 7, 11, 16\n~16 s no total", desenho: "B",
-    fala: "…e passam a ser cremosos. (2) · o detalhe mais ignorado… (6–7) · é exatamente aqui que eu coloco os meus (11) · comenta SOM (16)",
-    notas: ["Tripé um pouco acima dos olhos, câmera levemente inclinada para baixo.",
-            "Olhos em cima da linha de cima; cabeça na coluna do meio.",
-            "A borda da mesa corta o terço de baixo na diagonal.",
-            "A legenda pequena entra no centro, sobre o peito: deixe essa área livre de gesto parado.",
-            "Marque os pés do tripé com fita: todos os takes do B iguais."] },
-  { chip: "X", titulo: "Mão na lente", tc: "transição da cena 9\nse o vídeo antigo não tiver", desenho: "mao",
-    notas: ["Mesmo enquadramento do vídeo de exemplo.",
-            "Leve a mão até cobrir a lente inteira e depois tire.",
-            "O corte acontece no frame todo coberto (e ali entra o whoosh)."] },
+const CHIP = { A: "Gravar · A", B: "Gravar · B", S: "Acervo", C: "Edição" };
+
+const FOLHAS = [
+  { titulo: "Gancho e <em>série</em>", faixa: [0, 9.2],
+    quadros: [
+      { d: "A", k: "A", nome: "Ângulo A · médio-fechado", t: "0–2,7 s", nota: "Olhos logo abaixo da linha de cima: o topo é do texto. Câmera na altura dos olhos." },
+      { d: "entrada", k: "A", nome: "Entrada em movimento", t: "0–0,3 s", nota: "Comece fora do centro e entre no quadro. O 1º frame nunca é parado." },
+      { d: "B", k: "B", nome: "Ângulo B · aberto com mesa", t: "2,7–4 s", nota: "Tripé acima dos olhos, inclinado para baixo. Mesa cortando o terço de baixo." },
+      { d: "acervo", k: "S", nome: "Antes e depois", t: "4–9,2 s", nota: "3 trechos editados; depois o cru na moldura e o editado em tela cheia." },
+    ],
+    falas: [
+      { t: "0–2,7 s", k: "A", fala: "É assim que os seus <b>conteúdos</b> deixam de ser <b>chatos</b>…", tela: "texto gigante palavra por palavra no topo, “CONTEÚDOS” em amarelo", som: "voz já no 0 s, pop na entrada do texto" },
+      { t: "2,7–4 s", k: "B", fala: "…e passam a ser <b>cremosos</b>.", tela: "“CREMOSOS.” em amarelo, um pouco maior", som: "whoosh no corte de ângulo" },
+      { t: "4–7,4 s", k: "S", fala: "Parte 1 da série onde eu te ensino a levar os seus conteúdos…", tela: "3 trechos editados seus; legenda pequena no centro", som: "trilha" },
+      { t: "7,4–8,1 s", k: "S", fala: "…<b>disso</b>…", tela: "vídeo cru na moldura branca", som: "silêncio total" },
+      { t: "8,1–9,2 s", k: "S", fala: "…pra <b>isso</b>.", tela: "vídeo editado em tela cheia", som: "impacto; trilha volta" },
+    ] },
+  { titulo: "Mistério e <em>revelação</em>", faixa: [9.2, 19.7],
+    quadros: [
+      { d: "B", k: "B", nome: "Ângulo B · mistério", t: "9,2–13,9 s", nota: "Mesmo B, tripé marcado. No fim, olhos fechados e dedo levantado." },
+      { d: "cartela", k: "C", nome: "Cartela", t: "13,9–14,9 s", nota: "Fundo branco, texto preto, palavra por palavra." },
+      { d: "mao", k: "S", nome: "Exemplo · mão na lente", t: "14,9–18,8 s", nota: "Vídeo antigo. Se ele não tiver, grave a mão cobrindo a lente." },
+      { d: "digitando", k: "C", nome: "Texto digitado", t: "18,8–19,7 s", nota: "Um texto de abertura seu, letra a letra." },
+    ],
+    falas: [
+      { t: "9,2–12 s", k: "B", fala: "Esse é o detalhe mais <b>ignorado</b> em conteúdo estratégico…", tela: "legenda pequena no centro", som: "trilha" },
+      { t: "12–13,9 s", k: "B", fala: "…porque ninguém percebe que ele está ali. Só quando <b>falta</b>.", tela: "plano mais longo, sem corte", som: "a trilha some 0,3 s antes da revelação" },
+      { t: "13,9–14,9 s", k: "C", fala: "<b>Efeito sonoro.</b>", tela: "cartela “Efeito sonoro”", som: "impacto grave; trilha volta" },
+      { t: "14,9–19,7 s", k: "S", fala: "Bem colocado, ele faz cada corte ser <b>sentido</b>, e o seu cliente assiste <b>até o fim</b>.", tela: "exemplo com mão na lente e texto animado; depois o texto sendo digitado", som: "whoosh na mão, pops no texto, teclado" },
+    ] },
+  { titulo: "Lista e <em>CTA</em>", faixa: [19.7, 33.5],
+    quadros: [
+      { d: "B", k: "B", nome: "Ângulo B · re-gancho", t: "19,7–22 s", nota: "Mesmo enquadramento do B." },
+      { d: "slide", k: "C", nome: "Slides da lista", t: "22–27 s", nota: "4 slides de ~1,2 s: título no topo e um exemplo seu." },
+      { d: "cta", k: "B", nome: "Ângulo B · CTA", t: "27–33,5 s", nota: "Plano parado, sem cortes. “SOM” bem visível." },
+    ],
+    falas: [
+      { t: "19,7–22 s", k: "B", fala: "E é exatamente aqui que eu coloco os meus:", tela: "legenda pequena no centro", som: "trilha" },
+      { t: "22–23,2 s", k: "C", fala: "no texto de abertura,", tela: "slide “Texto de abertura” + o começo deste vídeo", som: "pop" },
+      { t: "23,2–24,4 s", k: "C", fala: "nos <b>overlays</b>,", tela: "slide “Overlays” + trecho com algo sobreposto", som: "swipe/pop" },
+      { t: "24,4–25,6 s", k: "C", fala: "nas transições, quando precisa,", tela: "slide “Transições” + um trecho de b-roll", som: "whoosh" },
+      { t: "25,6–27 s", k: "C", fala: "e nos exemplos visuais.", tela: "slide “Exemplos visuais” + trecho com imagem/print", som: "click/ding" },
+      { t: "27–33,5 s", k: "B", fala: "Se você quer a lista dos sites onde eu pego todos os meus efeitos de graça, comenta <b>SOM</b>. E se quer a parte 2 da série, me segue.", tela: "“SOM” entre aspas", som: "nenhum efeito: o CTA respira" },
+    ] },
 ];
 
-const NS = "http://www.w3.org/2000/svg";
-const W = 90, H = 160;
-const el = (tag, attrs = {}, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; };
+const FECHAMENTO = {
+  passos: [
+    ["Monte o Ângulo B", "Tripé um pouco acima dos olhos, mesa em primeiro plano. Marque os pés do tripé com fita."],
+    ["Grave as falas do B", "Folhas 1 a 3, tudo que tem “Gravar · B”. Pode gravar o texto inteiro de uma vez, 2 ou 3 takes."],
+    ["Mude para o Ângulo A", "Câmera na altura dos olhos, mais perto. Espaço acima da cabeça para o texto gigante."],
+    ["Grave o gancho no A", "Com a entrada em movimento. De 3 a 5 takes: é o trecho mais importante. Fale a frase inteira, até “cremosos”."],
+    ["Extras", "Mão na lente, se o vídeo de exemplo não tiver."],
+    ["Separe o acervo", "3 trechos editados · 1 vídeo cru + 1 editado · 1 com texto animado · 1 com overlay · 1 com exemplo visual."],
+  ],
+  intencao: [
+    "Texto gigante só no gancho, com <b>CONTEÚDOS</b> e <b>CREMOSOS</b> em destaque; depois, legenda discreta. <span class='why'>O texto grande segura os 3 primeiros segundos.</span>",
+    "Cortes caindo exatamente na palavra: troca de ângulo no gancho, “disso / pra isso” e cada item da lista.",
+    "O “antes” em silêncio total. <span class='why'>O contraste é a prova do que o vídeo ensina.</span>",
+    "Um respiro de silêncio antes de “Efeito sonoro”, e depois o impacto.",
+    "Cada item da lista toca o efeito que ele ensina.",
+    "Algo novo na tela a cada ~1,5 s até o CTA.",
+    "CTA limpo: plano parado, sem efeitos, “SOM” bem visível.",
+  ],
+  livre: [
+    "Fontes, cores e animação das legendas, desde que o destaque continue claro.",
+    "Quais efeitos sonoros usar e onde mais colocar.",
+    "A trilha: energia média, sempre abaixo da voz.",
+    "Transições, zooms, b-roll extra e a ordem dos trechos do acervo.",
+    "O visual das molduras e dos slides; o branco é só sugestão.",
+    "Cortar ou estender um bloco se o ritmo pedir.",
+  ],
+};
 
-function pessoa(g, cx, eyeY, s, cor = "var(--vf-body)", cabeca = "var(--vf-head)", mic = true) {
-  const sy = eyeY + 13 * s;
-  el("path", { d: `M${cx-17*s} ${H} L${cx-17*s} ${sy+8*s} Q${cx-17*s} ${sy} ${cx-9*s} ${sy-1*s} L${cx+9*s} ${sy-1*s} Q${cx+17*s} ${sy} ${cx+17*s} ${sy+8*s} L${cx+17*s} ${H} Z`, fill: cor }, g);
-  el("rect", { x: cx-2.6*s, y: eyeY+5*s, width: 5.2*s, height: 8*s, fill: cor }, g);
-  el("ellipse", { cx, cy: eyeY, rx: 6.2*s, ry: 7.6*s, fill: cabeca }, g);
-  el("circle", { cx: cx-2.3*s, cy: eyeY, r: .55*s, fill: "var(--vf-bg)" }, g);
-  el("circle", { cx: cx+2.3*s, cy: eyeY, r: .55*s, fill: "var(--vf-bg)" }, g);
-  if (mic) {
-    el("rect", { x: cx-6*s, y: sy+5*s, width: 2.4*s, height: 7*s, rx: .8*s, fill: "#dfe4e9" }, g);
-    el("circle", { cx: cx-4.8*s, cy: sy+4.6*s, r: 1.7*s, fill: "#59616b" }, g);
-  }
+/* ---------- desenho dos quadros (9:16, grade 3×3) ---------- */
+const NS = "http://www.w3.org/2000/svg", W = 90, H = 160;
+let uid = 0;
+const el = (tag, a = {}, p) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
+
+// silhueta anônima: cabeça lisa, pescoço e ombros, sem rosto
+function silhueta(g, cx, hy, s) {
+  const P = (dx, dy) => `${cx + dx * s} ${hy + dy * s}`;
+  el("path", { fill: "var(--vf-body)", d:
+    `M${P(-3.4, 5)} L${P(-3.6, 10.5)} C${P(-6, 12.5)} ${P(-14, 13.5)} ${P(-17, 15.5)} C${P(-19.5, 17)} ${P(-20.5, 20)} ${P(-20.5, 24)}` +
+    ` L${cx - 21 * s} ${H + 40} L${cx + 21 * s} ${H + 40}` +
+    ` L${P(20.5, 24)} C${P(20.5, 20)} ${P(19.5, 17)} ${P(17, 15.5)} C${P(14, 13.5)} ${P(6, 12.5)} ${P(3.6, 10.5)} L${P(3.4, 5)} Z` }, g);
+  el("ellipse", { cx, cy: hy, rx: 6.4 * s, ry: 7.9 * s, fill: "var(--vf-head)" }, g);
 }
 
-function grade(svg, w = W, h = H) {
-  const g = el("g", { stroke: "var(--vf-grid)", "stroke-width": .5, "stroke-dasharray": "2 1.5" }, svg);
-  for (const f of [1/3, 2/3]) { el("line", { x1: w*f, y1: 0, x2: w*f, y2: h }, g); el("line", { x1: 0, y1: h*f, x2: w, y2: h*f }, g); }
+function sala(svg) {
+  const id = "w" + (++uid), defs = el("defs", {}, svg);
+  const lg = el("linearGradient", { id, x1: 0, y1: 0, x2: 0, y2: 1 }, defs);
+  el("stop", { offset: 0, "stop-color": "var(--vf-wall-1)" }, lg); el("stop", { offset: 1, "stop-color": "var(--vf-wall-2)" }, lg);
+  const rg = el("radialGradient", { id: id + "l", cx: .85, cy: .3, r: .45 }, defs);
+  el("stop", { offset: 0, "stop-color": "rgba(255,200,130,.22)" }, rg); el("stop", { offset: 1, "stop-color": "rgba(255,200,130,0)" }, rg);
+  el("rect", { width: W, height: H, fill: `url(#${id})` }, svg);
+  el("rect", { width: W, height: H, fill: `url(#${id}l)` }, svg);
+  el("rect", { x: 7, y: 36, width: 15, height: 19, fill: "none", stroke: "rgba(255,255,255,.1)", "stroke-width": .8 }, svg);
 }
-
+function grade(svg) {
+  const g = el("g", { stroke: "var(--vf-grid)", "stroke-width": .45, "stroke-dasharray": "2 1.6" }, svg);
+  for (const f of [1 / 3, 2 / 3]) { el("line", { x1: W * f, y1: 0, x2: W * f, y2: H }, g); el("line", { x1: 0, y1: H * f, x2: W, y2: H * f }, g); }
+}
 function interfaceIG(svg) {
-  const defs = el("defs", {}, svg);
-  const p = el("pattern", { id: "hatch" + Math.random().toString(36).slice(2, 7), width: 3, height: 3, patternUnits: "userSpaceOnUse", patternTransform: "rotate(45)" }, defs);
-  el("rect", { width: 1.3, height: 3, fill: "rgba(255,90,90,.55)" }, p);
-  const fill = `url(#${p.id})`;
-  el("rect", { x: 0, y: H*.82, width: W, height: H*.18, fill }, svg);
-  el("rect", { x: W*.86, y: H*.52, width: W*.14, height: H*.30, fill }, svg);
+  const id = "h" + (++uid), defs = el("defs", {}, svg);
+  const p = el("pattern", { id, width: 3, height: 3, patternUnits: "userSpaceOnUse", patternTransform: "rotate(45)" }, defs);
+  el("rect", { width: 1.1, height: 3, fill: "rgba(255,110,110,.45)" }, p);
+  el("rect", { x: 0, y: H * .83, width: W, height: H * .17, fill: `url(#${id})` }, svg);
+  el("rect", { x: W * .87, y: H * .53, width: W * .13, height: H * .30, fill: `url(#${id})` }, svg);
 }
-
 function olhos(svg, y) {
-  el("line", { x1: 0, y1: y, x2: 6, y2: y, stroke: "var(--accent)", "stroke-width": 1.2 }, svg);
-  el("line", { x1: W-6, y1: y, x2: W, y2: y, stroke: "var(--accent)", "stroke-width": 1.2 }, svg);
+  for (const [a, b] of [[0, 7], [W - 7, W]]) el("line", { x1: a, y1: y, x2: b, y2: y, stroke: "var(--accent)", "stroke-width": 1.3 }, svg);
 }
-
-function texto(svg, x, y, w, h, label, size) {
-  el("rect", { x, y, width: w, height: h, fill: "rgba(245,208,0,.18)", stroke: "var(--accent)", "stroke-width": .5 }, svg);
-  const t = el("text", { x: x + w/2, y: y + h/2 + size*.35, "text-anchor": "middle", fill: "var(--vf-text)", "font-family": "Barlow Condensed, Arial Narrow, sans-serif", "font-weight": 700, "font-size": size }, svg);
-  t.textContent = label;
+function texto(svg, x, y, w, h, label, size, cor = "#fff") {
+  el("rect", { x, y, width: w, height: h, rx: 1, fill: "rgba(245,208,0,.14)", stroke: "var(--accent)", "stroke-width": .5 }, svg);
+  el("text", { x: x + w / 2, y: y + h / 2 + size * .36, "text-anchor": "middle", fill: cor, "font-family": "Barlow Condensed, Arial Narrow, sans-serif", "font-weight": 700, "font-size": size }, svg).textContent = label;
 }
-
-function fundo(svg) {
-  el("rect", { width: W, height: H, fill: "var(--vf-wall)" }, svg);
-  el("rect", { x: 6, y: 34, width: 16, height: 21, fill: "none", stroke: "#4a535d", "stroke-width": 1 }, svg);
-  el("rect", { x: 66, y: 40, width: 14, height: 18, fill: "none", stroke: "#4a535d", "stroke-width": 1 }, svg);
+function mesa(svg) { el("polygon", { points: `0,104 ${W},119 ${W},${H} 0,${H}`, fill: "var(--vf-desk)" }, svg); }
+function branco(svg) { el("rect", { width: W, height: H, fill: "var(--vf-white)" }, svg); }
+function janela(svg, x, y, w, h, s, hy) {
+  const id = "c" + (++uid), cp = el("clipPath", { id }, el("defs", {}, svg));
+  el("rect", { x, y, width: w, height: h }, cp);
+  const g = el("g", { "clip-path": `url(#${id})` }, svg);
+  el("rect", { x, y, width: w, height: h, fill: "var(--vf-wall-2)" }, g);
+  silhueta(g, x + w / 2, hy, s);
+}
+function rotulo(svg, x, y, txt, size = 4.6, cor = "#8a929b") {
+  el("text", { x, y, "text-anchor": "middle", fill: cor, "font-family": "JetBrains Mono, monospace", "font-size": size }, svg).textContent = txt;
 }
 
 const DESENHOS = {
-  A(svg) {
-    fundo(svg);
-    pessoa(svg, 45, 61, 1.9);
-    texto(svg, 10, 18, 70, 20, "TEXTO GIGANTE", 10);
-    grade(svg); interfaceIG(svg); olhos(svg, 61);
+  A(s) { sala(s); silhueta(s, 45, 63, 1.7); texto(s, 9, 15, 72, 21, "TEXTO GIGANTE", 10); grade(s); interfaceIG(s); olhos(s, 63); },
+  entrada(s) {
+    sala(s);
+    const ghost = el("g", { opacity: .35, transform: "translate(22 4) rotate(-7 45 110)" }, s); silhueta(ghost, 45, 63, 1.7);
+    silhueta(s, 45, 63, 1.7);
+    const a = el("g", { stroke: "var(--accent)", "stroke-width": 1.6, fill: "none", "stroke-linecap": "round", "stroke-linejoin": "round" }, s);
+    el("path", { d: "M80 50 Q70 44 60 47" }, a); el("path", { d: "M63 43 L59 47 L64 50" }, a);
+    grade(s); interfaceIG(s); olhos(s, 63);
   },
-  entrada(svg) {
-    fundo(svg);
-    const ghost = el("g", { opacity: .55, transform: "rotate(-8 70 110)" }, svg);
-    pessoa(ghost, 70, 66, 1.9, "var(--vf-ghost)", "var(--vf-ghost)", false);
-    pessoa(svg, 45, 61, 1.9);
-    const a = el("g", { stroke: "var(--accent)", "stroke-width": 1.6, fill: "none", "stroke-linecap": "round" }, svg);
-    el("path", { d: "M78 92 Q66 86 56 90" }, a); el("path", { d: "M58 85 L55 90 L61 92" }, a);
-    for (const y of [70, 76, 82]) el("line", { x1: 80, y1: y, x2: 87, y2: y + 1, stroke: "var(--vf-grid)", "stroke-width": .8 }, svg);
-    grade(svg); interfaceIG(svg); olhos(svg, 61);
+  B(s) { sala(s); silhueta(s, 45, 54, 1.15); mesa(s); texto(s, 31, 79, 28, 9, "legenda", 6.5); grade(s); interfaceIG(s); olhos(s, 54); },
+  cta(s) { sala(s); silhueta(s, 45, 54, 1.15); mesa(s); texto(s, 29, 79, 32, 10, "“SOM”", 7.5, "#f5d000"); grade(s); interfaceIG(s); olhos(s, 54); },
+  acervo(s) { branco(s); rotulo(s, 45, 15, "VÍDEO ANTIGO"); janela(s, 11, 22, 68, 121, 1.05, 72); rotulo(s, 45, 153, "cru → editado", 4.4, "#6b737c"); },
+  cartela(s) {
+    branco(s);
+    el("text", { x: 45, y: 84, "text-anchor": "middle", fill: "var(--vf-ink)", "font-family": "Barlow, Arial, sans-serif", "font-style": "italic", "font-weight": 600, "font-size": 12 }, s).textContent = "Efeito sonoro";
   },
-  B(svg) {
-    fundo(svg);
-    pessoa(svg, 45, 54, 1.25);
-    el("polygon", { points: `0,104 ${W},120 ${W},${H} 0,${H}`, fill: "var(--vf-desk)" }, svg);
-    texto(svg, 32, 80, 26, 9, "legenda", 7);
-    grade(svg); interfaceIG(svg); olhos(svg, 54);
+  mao(s) {
+    sala(s); const g = el("g", { opacity: .4 }, s); silhueta(g, 45, 63, 1.7);
+    const m = el("g", { fill: "#c7cdd4" }, s);
+    el("ellipse", { cx: 46, cy: 100, rx: 29, ry: 33 }, m);
+    [[20, 56, -16], [33, 44, -6], [47, 41, 3], [60, 46, 12]].forEach(([x, y, r]) => el("rect", { x, y, width: 11, height: 38, rx: 5.5, transform: `rotate(${r} ${x + 5.5} ${y + 19})` }, m));
+    el("rect", { x: 68, y: 88, width: 11, height: 30, rx: 5.5, transform: "rotate(50 73.5 103)" }, m);
+    grade(s); interfaceIG(s);
   },
-  mao(svg) {
-    fundo(svg);
-    const g = el("g", { opacity: .5 }, svg); pessoa(g, 45, 61, 1.9);
-    const m = el("g", { fill: "#c9a58a" }, svg);
-    el("ellipse", { cx: 46, cy: 92, rx: 34, ry: 40 }, m);
-    [[18, 50, -18], [32, 36, -6], [48, 32, 4], [63, 38, 14]].forEach(([x, y, r]) => el("rect", { x, y, width: 12, height: 40, rx: 6, transform: `rotate(${r} ${x+6} ${y+20})` }, m));
-    el("rect", { x: 70, y: 86, width: 12, height: 32, rx: 6, transform: "rotate(48 76 102)" }, m);
-    grade(svg); interfaceIG(svg);
+  digitando(s) {
+    branco(s);
+    const f = { "text-anchor": "middle", fill: "var(--vf-ink)", "font-family": "Barlow, Arial, sans-serif", "font-weight": 600, "font-size": 7.4 };
+    el("text", { ...f, x: 45, y: 76 }, s).textContent = "3 erros que deixam";
+    el("text", { ...f, x: 42, y: 87 }, s).textContent = "seu conteúdo cha";
+    el("rect", { x: 70.5, y: 81, width: .9, height: 8, fill: "var(--vf-ink)" }, s);
+  },
+  slide(s) {
+    branco(s);
+    el("text", { x: 45, y: 20, "text-anchor": "middle", fill: "var(--vf-ink)", "font-family": "Barlow Condensed, Arial Narrow, sans-serif", "font-weight": 700, "font-size": 9.5 }, s).textContent = "Texto de abertura";
+    janela(s, 14, 28, 62, 110, 1, 70);
+    rotulo(s, 45, 151, "+ 3 slides iguais", 4.4, "#6b737c");
   },
 };
 
-const total = CENAS[CENAS.length - 1].t[1];
-const strip = document.getElementById("strip");
-for (const c of CENAS) {
-  const d = document.createElement("div");
-  d.className = "seg " + c.k;
-  d.style.flex = String(c.t[1] - c.t[0]);
-  d.title = `Cena ${c.n} · ${c.t[0]}–${c.t[1]} s · ${c.nome}`;
-  d.innerHTML = `<small>${c.n}</small>${c.nome}`;
-  strip.appendChild(d);
+/* ---------- montagem das folhas ---------- */
+const wrap = document.getElementById("wrap");
+const nFolhas = FOLHAS.length + 1;
+const seg = n => String(n).replace(".", ",");
+
+function cabecalho(i, titulo, faixa) {
+  const h = document.createElement("header"); h.className = "head";
+  h.innerHTML = `<div class="slate">Prancheta · ${ROTEIRO}</div><h2>${titulo}</h2><div class="pg"><small>folha</small>${i}<small>de ${nFolhas}</small></div>`;
+  const mini = document.createElement("div"); mini.className = "mini";
+  for (const c of CENAS) {
+    const sp = document.createElement("span"); sp.className = "k-" + c.k; sp.style.flex = String(c.t[1] - c.t[0]);
+    if (!faixa || (c.t[0] >= faixa[0] && c.t[1] <= faixa[1])) sp.classList.add("on");
+    mini.appendChild(sp);
+  }
+  h.appendChild(mini);
+  const sub = document.createElement("div"); sub.className = "slate"; sub.style.gridColumn = "1 / -1";
+  sub.textContent = faixa ? `${seg(faixa[0])}–${seg(faixa[1])} s` : "antes de gravar e editar";
+  h.appendChild(sub);
+  return h;
+}
+function rodape() {
+  const f = document.createElement("footer"); f.className = "foot";
+  f.innerHTML = `<span><i class="sw grid"></i>grade 3×3 da câmera</span><span><i class="sw eye"></i>linha dos olhos</span><span><i class="sw txt"></i>onde entra o texto</span><span><i class="sw ui"></i>interface do Instagram (aprox.)</span>`;
+  return f;
 }
 
-const board = document.getElementById("board");
-for (const q of QUADROS) {
-  const card = document.createElement("article");
-  card.className = "card";
-  const fr = document.createElement("div"); fr.className = "frame";
-  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": q.titulo });
-  el("rect", { width: "100%", height: "100%", fill: "var(--vf-bg)" }, svg);
-  DESENHOS[q.desenho](svg);
-  fr.appendChild(svg);
-  const tag = document.createElement("div"); tag.className = "tag";
-  tag.innerHTML = `<h3><span class="chip ${q.chip}">${q.chip === "X" ? "EXTRA" : q.chip}</span>${q.titulo}</h3><span class="tc">${q.tc.replace("\n", "<br>")}</span>`;
-  const ul = document.createElement("ul");
-  for (const n of q.notas) { const li = document.createElement("li"); li.textContent = n; ul.appendChild(li); }
-  card.append(fr, tag, ul);
-  if (q.fala) { const f = document.createElement("p"); f.className = "fala"; f.innerHTML = "<b>Fala neste ângulo</b>"; f.append(q.fala); card.appendChild(f); }
-  board.appendChild(card);
-}
+FOLHAS.forEach((F, i) => {
+  const page = document.createElement("section"); page.className = "page";
+  page.appendChild(cabecalho(i + 1, F.titulo, F.faixa));
+  const body = document.createElement("div"); body.className = "body";
+  const frames = document.createElement("div"); frames.className = "frames"; frames.style.setProperty("--n", F.quadros.length);
+  for (const q of F.quadros) {
+    const fr = document.createElement("figure"); fr.className = "fr";
+    const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": q.nome });
+    DESENHOS[q.d](svg); fr.appendChild(svg);
+    fr.insertAdjacentHTML("beforeend", `<div><span class="chip ${q.k}">${CHIP[q.k]}</span></div><h3>${q.nome}</h3><div class="t">${q.t}</div><p>${q.nota}</p>`);
+    frames.appendChild(fr);
+  }
+  const lines = document.createElement("div"); lines.className = "lines";
+  lines.innerHTML = "<h4>Falas desta faixa</h4>";
+  for (const l of F.falas) {
+    lines.insertAdjacentHTML("beforeend", `<div class="ln"><div class="tc">${l.t}<span class="chip ${l.k}">${CHIP[l.k]}</span></div><div class="say">${l.fala}</div><div class="meta"><i>tela</i>${l.tela} · <i>som</i>${l.som}</div></div>`);
+  }
+  body.append(frames, lines);
+  page.append(body, rodape());
+  wrap.appendChild(page);
+});
+
+const fim = document.createElement("section"); fim.className = "page";
+fim.appendChild(cabecalho(nFolhas, "Gravação e <em>edição</em>", null));
+const cl = document.createElement("div"); cl.className = "closing";
+cl.innerHTML = `<div><h3>Ordem de gravação</h3><ol class="steps">${FECHAMENTO.passos.map(([t, d]) => `<li><b>${t}</b><span>${d}</span></li>`).join("")}</ol></div>
+<div><h3>Para o editor</h3><p class="ed-note">Isto é um norte, não uma receita. Os tempos são referência. Confio na sua criatividade: se tiver uma ideia melhor, faça e me mostre. Só não deixe a intenção se perder.</p>
+<div class="cols"><div><h4>A intenção (não pode faltar)</h4><ul>${FECHAMENTO.intencao.map(x => `<li>${x}</li>`).join("")}</ul></div>
+<div class="free"><h4>Fica a seu critério</h4><ul>${FECHAMENTO.livre.map(x => `<li>${x}</li>`).join("")}</ul></div></div></div>`;
+fim.append(cl, rodape());
+wrap.appendChild(fim);
 </script>
