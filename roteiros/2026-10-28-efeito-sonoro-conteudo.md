@@ -3,7 +3,7 @@
 - **Baseado em:** analises/2026-10-28-DbJEDXOxgkC (estrutura mistério → revelação → lista, em série)
 - **Vídeo de referência:** https://www.instagram.com/reel/DbJEDXOxgkC/
 - **Objetivo:** comentários com palavra-chave (lead) + seguidores para a parte 2 · **Duração alvo:** ~33 s · **Criado em:** 2026-10-28
-- **Status:** rascunho
+- **Status:** aprovado ⭐ (2026-10-28)
 - **Prancheta de enquadramento:** [PDF para imprimir](2026-10-28-efeito-sonoro-conteudo-prancheta.pdf) · [imagem](2026-10-28-efeito-sonoro-conteudo-prancheta.png) · [página](2026-10-28-efeito-sonoro-conteudo-prancheta.html) · https://claude.ai/artifact/5P5ZdrD2mtqx6FVpM3qWXP
 - **Público:** profissionais e negócios que gravam vídeo para vender · **Gravação:** sozinho, câmera no tripé · **Edição:** CapCut ou Premiere
 - **Tom:** direto e didático (o perfil ainda não define o tom; usei o do original)
