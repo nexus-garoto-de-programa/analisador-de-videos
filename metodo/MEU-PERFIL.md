@@ -4,12 +4,12 @@ Usado para adaptar os roteiros. Se algum campo estiver vazio quando um roteiro f
 o Claude pergunta e preenche aqui.
 
 - **Quem sou / marca:**
-- **Nicho e temas:**
-- **Público (quem, idade, dor, desejo):**
+- **Nicho e temas:** dicas de vídeo/conteúdo para negócios (inferido do 1º roteiro, 2026-10-28 — confirmar)
+- **Público (quem, idade, dor, desejo):** profissionais e negócios (empreendedores, profissionais liberais, lojas) que gravam vídeo para vender e acham o próprio vídeo sem graça
 - **Objetivo dos vídeos (seguidores, vendas, agendamentos, autoridade…):**
 - **Tom de voz (sério, engraçado, direto, acolhedor…):**
 - **Expressões que eu uso / que eu nunca uso:**
-- **Como eu gravo (sozinho, celular, tripé, tem ajudante, lugar):**
-- **Editor que eu uso (CapCut, InShot, Premiere…):**
+- **Como eu gravo (sozinho, celular, tripé, tem ajudante, lugar):** sozinho, câmera no tripé. Tenho acervo de vídeos antigos (crus e editados) para antes/depois e b-roll
+- **Editor que eu uso (CapCut, InShot, Premiere…):** CapCut ou Premiere
 - **CTA preferido:**
 - **Limites (não mostro rosto, não falo de X…):**
