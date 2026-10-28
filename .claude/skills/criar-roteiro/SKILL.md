@@ -23,7 +23,25 @@ description: Cria um roteiro de vídeo curto com a mesma estrutura de um vídeo 
 - Tudo gravável com o que o perfil diz que o dono tem (sozinho, celular, editor).
 - Preencha `templates/roteiro.md` e salve em `roteiros/AAAA-MM-DD-<tema>.md`.
 
+## Prancheta de enquadramento (sempre junto do roteiro)
+Material para o dono, o videomaker e o editor (e para imprimir).
+- Copie `templates/prancheta.html` para `roteiros/AAAA-MM-DD-<tema>-prancheta.html` e troque só os dados
+  `ROTEIRO`, `REFERENCIA` (link do vídeo original, clicável no topo da folha 1 e na folha de gravação e
+  edição), `CENAS`, `FOLHAS` e `FECHAMENTO` no `<script>`.
+- **Folhas A4 deitadas**, uma por faixa de tempo (~3 folhas para ~30 s): à esquerda, de 1 a 4 quadros
+  dos ângulos daquela faixa (9:16, grade 3×3, linha dos olhos, onde entra o texto, interface do Instagram);
+  à direita, as falas da faixa com tempo, ângulo e uma linha discreta de "tela" e "som".
+- Identidade **Nexus** (`marca/MARCA.md`): o modelo já vem com cores, fonte, logo e símbolo; não troque.
+  O destaque das legendas no vídeo é o roxo da marca.
+- O boneco é uma **silhueta anônima** (sem rosto, sem microfone, sem detalhes). Formato sempre 9:16.
+- Última folha: "Ordem de gravação" (videomaker) e "Para o editor": "A intenção (não pode faltar)" e
+  "Fica a seu critério". O dono confia na criatividade do editor: oriente a intenção, não trave.
+- Gere o PDF (Playwright `page.pdf`, `preferCSSPageSize`) e um PNG das folhas ao lado do HTML, publique a
+  página como Artifact e ponha os links no topo do roteiro.
+
 ## Entregar
+- Roteiro novo nasce com status `rascunho`. Quando o dono aprovar, siga a skill `treinar`
+  ("Roteiro aprovado"): status `aprovado ⭐`, pull request e merge na `main`.
 - Commit e push (`roteiro: <tema>`).
 - No chat: as 3 opções de gancho e a tabela cena a cena. Pergunte se quer ajustar algo; ajustes
   de gosto sobre roteiros também viram lição (skill `treinar`).

@@ -2,6 +2,7 @@
 
 - **Baseado em:** <analises/pasta> (estrutura <estrutura-mãe>)
 - **Objetivo:** <…> · **Duração alvo:** <X s> · **Criado em:** <AAAA-MM-DD>
+- **Status:** rascunho | aprovado ⭐
 
 ## 3 opções de gancho
 1. **<tipo>** — Fala: "…" · Visual: … · Texto na tela: "…"

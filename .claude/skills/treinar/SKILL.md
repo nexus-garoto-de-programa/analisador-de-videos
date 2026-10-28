@@ -29,6 +29,9 @@ viram regras em `metodo/METODO.md` → **Regras do dono**. As próximas análise
 ## Quando o dono aprova
 - Mude o status da análise para `aprovada ⭐` e marque ⭐ no `analises/INDICE.md`.
   Análises aprovadas servem de exemplo de nível para as próximas.
+- **Roteiro aprovado:** mude o status do roteiro para `aprovado ⭐`, grave como lição o que os ajustes
+  ensinaram (se ainda não gravou), commit e push, depois **abra um pull request para a `main` e faça o
+  merge** (regra do `CLAUDE.md`). Responda com o link do PR.
 
 ## Revisar o método ("o que você já aprendeu?")
 - Resuma as Regras do dono e as lições não promovidas.
