@@ -7,7 +7,7 @@
   --nx-muted: #6A6778;
   --nx-line: #DEDCE6;
   --nx-soft: #F3F2F8;
-  --nx-font: "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif; /* provisória */
+  --nx-font: "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif; /* fonte oficial */
   --nx-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
   --nx-cut: polygon(.32em 0, 100% 0, 100% calc(100% - .32em), calc(100% - .32em) 100%, 0 100%, 0 .32em);
 }
