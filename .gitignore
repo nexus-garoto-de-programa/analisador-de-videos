@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+cookies.txt
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.wav
+*.mp3
+# Frames e dados brutos ficam fora do git; a análise (analise.md) e o relatório entram.
+analises/*/frames/
+analises/*/*.json
+analises/*/transcricao.srt
+!analises/*/metadados.json
