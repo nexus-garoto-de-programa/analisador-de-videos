@@ -23,6 +23,17 @@ description: Cria um roteiro de vídeo curto com a mesma estrutura de um vídeo 
 - Tudo gravável com o que o perfil diz que o dono tem (sozinho, celular, editor).
 - Preencha `templates/roteiro.md` e salve em `roteiros/AAAA-MM-DD-<tema>.md`.
 
+## Prancheta de enquadramento (sempre junto do roteiro)
+Material para o dono e para um videomaker gravarem sem precisar ler o roteiro inteiro (no futuro, para imprimir).
+- Copie `templates/prancheta.html` para `roteiros/AAAA-MM-DD-<tema>-prancheta.html` e troque só os dados
+  `CENAS` e `QUADROS` no `<script>` (e os textos do cabeçalho e da ordem de gravação).
+- Um quadro por **enquadramento** (não por cena), desenhado na grade 3×3 em 9:16: linha dos olhos, onde
+  entra o texto, área da interface do Instagram, notas curtas e a fala daquele ângulo. Inclua os extras
+  (entrada em movimento, mão na lente…) e o quadro "câmera deitada (16:9)", porque o dono grava em câmera.
+- Faixa "onde cada enquadramento entra" com as cenas e os tempos; "Ordem de gravação" em passos para o videomaker.
+- Gere o PNG (Playwright, página inteira, 1240 px, escala 2) ao lado do HTML, publique a página como
+  Artifact e ponha os dois links no topo do roteiro.
+
 ## Entregar
 - Roteiro novo nasce com status `rascunho`. Quando o dono aprovar, siga a skill `treinar`
   ("Roteiro aprovado"): status `aprovado ⭐`, pull request e merge na `main`.

@@ -1,0 +1,311 @@
+<title>Prancheta do Efeito Sonoro</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: prancheta de diretor — cabeçalho tipo claquete, faixa de cenas, grade de quadros 9:16 com notas */
+:root {
+  --bg: #e9ebee; --paper: #f7f8f9; --fg: #1b1f24; --muted: #5b636e; --line: #cdd2d8;
+  --accent: #f5d000; --accent-ink: #1b1f24; --b: #4c8dd6; --stock: #9aa3ad;
+  /* o "visor" da câmera é sempre escuro, nos dois temas */
+  --vf-bg: #20252b; --vf-wall: #2c333b; --vf-desk: #6b5f52; --vf-body: #8b96a3; --vf-head: #b4bdc7;
+  --vf-grid: rgba(255,255,255,.6); --vf-ui: rgba(255,90,90,.22); --vf-text: #ffffff; --vf-ghost: rgba(180,189,199,.35);
+  --display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --body: "Barlow", "Helvetica Neue", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #14171b; --paper: #1d2126; --fg: #e8ebee; --muted: #9aa3ad; --line: #30363d;
+  --accent: #f5d000; --accent-ink: #14171b; --b: #6fa6e6; --stock: #6b7480; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #14171b; --paper: #1d2126; --fg: #e8ebee; --muted: #9aa3ad; --line: #30363d;
+  --accent: #f5d000; --accent-ink: #14171b; --b: #6fa6e6; --stock: #6b7480; color-scheme: dark }
+
+body { background: var(--bg); color: var(--fg); font: 15px/1.5 var(--body); }
+.wrap { max-width: 1180px; margin: 0 auto; padding-block: 28px 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 28px; }
+.wrap > * { min-width: 0; }
+
+header { display: grid; gap: 10px; border-bottom: 2px solid var(--fg); padding-bottom: 16px; }
+.slate { display: flex; flex-wrap: wrap; gap: 6px 18px; font: 500 12px/1.4 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.slate b { color: var(--fg); font-weight: 500; }
+h1 { font: 700 clamp(30px, 5vw, 46px)/1 var(--display); letter-spacing: .01em; margin: 0; text-transform: uppercase; text-wrap: balance; }
+h1 span { background: var(--accent); color: var(--accent-ink); padding: 0 .15em; }
+.lead { margin: 0; max-width: 68ch; color: var(--muted); }
+
+h2 { font: 700 20px/1.1 var(--display); text-transform: uppercase; letter-spacing: .04em; margin: 0 0 10px; }
+
+.strip-box { overflow-x: auto; }
+.strip { min-width: 680px; display: flex; height: 54px; border: 1px solid var(--line); background: var(--paper); }
+.seg { position: relative; border-right: 1px solid var(--bg); display: flex; align-items: flex-end; padding: 4px 5px; font: 600 12px/1 var(--display); letter-spacing: .03em; overflow: hidden; min-width: 0; }
+.seg small { position: absolute; top: 5px; left: 5px; font: 500 10px/1 var(--mono); opacity: .8; }
+.seg.A { background: var(--accent); color: var(--accent-ink); }
+.seg.B { background: var(--b); color: #fff; }
+.seg.S { background: var(--stock); color: #fff; }
+.seg.C { background: var(--paper); color: var(--muted); background-image: repeating-linear-gradient(135deg, transparent 0 6px, var(--line) 6px 7px); }
+.keys { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 10px; font-size: 13px; color: var(--muted); }
+.keys i { display: inline-block; width: 12px; height: 12px; vertical-align: -1px; margin-right: 6px; border: 1px solid var(--line); }
+
+.board { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 18px; }
+.card { background: var(--paper); border: 1px solid var(--line); display: grid; grid-template-rows: auto auto 1fr; min-width: 0; }
+.card.wide { grid-column: 1 / -1; grid-template-columns: minmax(0, 1.15fr) 1fr; grid-template-rows: auto 1fr; }
+.card.wide .frame { grid-row: 1 / 3; padding-bottom: 14px; align-items: center; }
+@media (max-width: 720px) { .card.wide { grid-template-columns: 1fr; grid-template-rows: none; } .card.wide .frame { grid-row: auto; padding-bottom: 0; } }
+.frame { padding: 14px 14px 0; display: flex; justify-content: center; }
+.frame svg { display: block; width: 100%; max-width: 230px; height: auto; }
+.card.wide .frame svg { max-width: 460px; }
+.tag { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; padding: 12px 14px 4px; }
+.tag h3 { margin: 0; font: 700 19px/1.1 var(--display); text-transform: uppercase; letter-spacing: .02em; }
+.tag .tc { font: 500 11px/1.3 var(--mono); color: var(--muted); text-align: right; white-space: nowrap; }
+.chip { display: inline-block; font: 700 11px/1 var(--display); letter-spacing: .06em; padding: 3px 6px 2px; margin-right: 6px; vertical-align: 2px; }
+.chip.A { background: var(--accent); color: var(--accent-ink); }
+.chip.B { background: var(--b); color: #fff; }
+.chip.X { background: var(--fg); color: var(--paper); }
+.card ul { margin: 0; padding: 4px 14px 16px 30px; display: grid; gap: 4px; align-content: start; font-size: 14px; }
+.card li::marker { color: var(--muted); }
+
+.legend { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px 24px; font-size: 14px; }
+.legend div { display: flex; gap: 10px; align-items: flex-start; }
+.sw { flex: none; width: 28px; height: 18px; margin-top: 2px; border: 1px solid var(--line); background: var(--vf-bg); }
+.sw.grid { background: linear-gradient(90deg, transparent 13px, #fff 13px 15px, transparent 15px), var(--vf-bg); }
+.sw.eye { background: linear-gradient(transparent 8px, var(--accent) 8px 10px, transparent 10px), var(--vf-bg); }
+.sw.ui { background: repeating-linear-gradient(135deg, rgba(255,90,90,.55) 0 3px, transparent 3px 6px), var(--vf-bg); }
+.sw.txt { background: linear-gradient(transparent 4px, var(--accent) 4px 14px, transparent 14px), var(--vf-bg); }
+ol.steps { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; counter-reset: s; }
+ol.steps li { counter-increment: s; background: var(--paper); border: 1px solid var(--line); padding: 12px 14px 14px; display: grid; gap: 6px; align-content: start; min-width: 0; }
+ol.steps li::before { content: "Passo " counter(s); font: 500 11px/1 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+ol.steps h3 { margin: 0; font: 700 18px/1.1 var(--display); text-transform: uppercase; }
+ol.steps p { margin: 0; font-size: 14px; }
+ol.steps q { quotes: "“" "”"; font-style: italic; }
+.fala { margin: 0 14px 14px; padding: 8px 10px; border-left: 3px solid var(--accent); background: var(--bg); font-size: 13.5px; }
+.fala b { display: block; font: 500 10.5px/1.3 var(--mono); text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+@media print { body { background: #fff; } .card, ol.steps li { break-inside: avoid; } .strip-box { overflow: visible; } }
+footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 12px; }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="slate"><span>Roteiro <b>efeito sonoro — conteúdos cremosos</b></span><span>Formato <b>9:16 · ~33 s</b></span><span>Gravação <b>sozinho · câmera no tripé</b></span><span>Grade <b>3 × 3</b></span></div>
+    <h1>Prancheta de <span>enquadramento</span></h1>
+    <p class="lead">Só existem dois enquadramentos para gravar: o Ângulo A (gancho) e o Ângulo B (todo o resto da fala). O resto do vídeo sai do seu acervo ou é montado na edição. Use os quadros como referência na grade da câmera; o passo a passo no fim serve para você ou para quem estiver filmando.</p>
+  </header>
+
+  <section>
+    <h2>Onde cada enquadramento entra</h2>
+    <div class="strip-box"><div class="strip" id="strip"></div></div>
+    <div class="keys">
+      <span><i style="background:var(--accent)"></i>Ângulo A</span>
+      <span><i style="background:var(--b)"></i>Ângulo B</span>
+      <span><i style="background:var(--stock)"></i>Acervo (vídeos antigos)</span>
+      <span><i style="background-image:repeating-linear-gradient(135deg,transparent 0 3px,var(--line) 3px 4px)"></i>Cartela ou slide (só edição)</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Quadros</h2>
+    <div class="board" id="board"></div>
+  </section>
+
+  <section>
+    <h2>Ordem de gravação · para você ou para o videomaker</h2>
+    <ol class="steps">
+      <li><h3>Monte o Ângulo B</h3><p>Tripé um pouco acima dos olhos, mesa em primeiro plano. Marque os pés do tripé com fita.</p></li>
+      <li><h3>Grave as falas do B</h3><p>Cenas 2, 6, 7, 11 e 16. Grave o texto inteiro de uma vez, 2 ou 3 takes. Na edição só se usa o que é do B.</p></li>
+      <li><h3>Mude para o Ângulo A</h3><p>Câmera na altura dos olhos, mais perto. Deixe espaço acima da cabeça para o texto gigante.</p></li>
+      <li><h3>Grave o gancho no A</h3><p>Cena 1 com a entrada em movimento. De 3 a 5 takes: é o trecho mais importante do vídeo. Termine a frase inteira (<q>…e passam a ser cremosos</q>) para ter a opção de corte.</p></li>
+      <li><h3>Extras</h3><p>Mão na lente, se o vídeo de exemplo não tiver.</p></li>
+      <li><h3>Separe o acervo</h3><p>3 trechos editados (cena 3) · 1 vídeo cru + 1 editado (cenas 4–5) · 1 com texto animado (cena 9) · 1 com overlay · 1 com exemplo visual.</p></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Como ler os quadros</h2>
+    <div class="legend">
+      <div><span class="sw grid"></span><span><b>Grade 3 × 3</b>: a mesma da câmera. A coluna do meio é o seu lugar.</span></div>
+      <div><span class="sw eye"></span><span><b>Linha dos olhos</b>: onde seus olhos devem ficar.</span></div>
+      <div><span class="sw txt"></span><span><b>Texto</b>: onde a legenda vai entrar na edição. Não coloque rosto nem gesto importante ali.</span></div>
+      <div><span class="sw ui"></span><span><b>Interface do Instagram</b> (aproximada): nome, legenda e botões cobrem essa área.</span></div>
+    </div>
+  </section>
+
+  <footer>Baseado em analises/2026-10-28-DbJEDXOxgkC · roteiros/2026-10-28-efeito-sonoro-conteudo.md</footer>
+</div>
+
+<script>
+// Dados da prancheta: para um roteiro novo, troque só CENAS e QUADROS.
+const CENAS = [
+  { n: "1", t: [0, 2.7], k: "A", nome: "gancho" },
+  { n: "2", t: [2.7, 4], k: "B", nome: "gancho" },
+  { n: "3–5", t: [4, 9.2], k: "S", nome: "série + antes/depois" },
+  { n: "6–7", t: [9.2, 13.9], k: "B", nome: "mistério" },
+  { n: "8", t: [13.9, 14.9], k: "C", nome: "revelação" },
+  { n: "9", t: [14.9, 18.8], k: "S", nome: "exemplo" },
+  { n: "10", t: [18.8, 19.7], k: "C", nome: "ex. 2" },
+  { n: "11", t: [19.7, 22], k: "B", nome: "re-gancho" },
+  { n: "12–15", t: [22, 27], k: "C", nome: "lista (4 slides)" },
+  { n: "16", t: [27, 33.5], k: "B", nome: "CTA" },
+];
+
+const QUADROS = [
+  { chip: "A", titulo: "Ângulo A · médio-fechado", tc: "cena 1\n0–2,7 s", desenho: "A",
+    fala: "É assim que os seus conteúdos deixam de ser chatos…",
+    notas: ["Olhos logo abaixo da linha de cima: o terço de cima é do texto gigante.",
+            "Rosto na coluna do meio; ombros ocupando ~70% da largura.",
+            "Câmera na altura dos olhos, sem inclinar.",
+            "Microfone na mão, na altura do peito; dedo apontando para a lente."] },
+  { chip: "A", titulo: "Ângulo A · entrada", tc: "início da cena 1\n0–0,3 s", desenho: "entrada",
+    notas: ["Comece meio passo fora do centro e entre no quadro, ou se ajeite na cadeira.",
+            "A 1ª palavra sai já chegando na posição do Ângulo A.",
+            "O 1º frame precisa ter movimento, nunca imagem parada."] },
+  { chip: "B", titulo: "Ângulo B · aberto com mesa", tc: "cenas 2, 6, 7, 11, 16\n~16 s no total", desenho: "B",
+    fala: "…e passam a ser cremosos. (2) · o detalhe mais ignorado… (6–7) · é exatamente aqui que eu coloco os meus (11) · comenta SOM (16)",
+    notas: ["Tripé um pouco acima dos olhos, câmera levemente inclinada para baixo.",
+            "Olhos em cima da linha de cima; cabeça na coluna do meio.",
+            "A borda da mesa corta o terço de baixo na diagonal.",
+            "A legenda pequena entra no centro, sobre o peito: deixe essa área livre de gesto parado.",
+            "Marque os pés do tripé com fita: todos os takes do B iguais."] },
+  { chip: "X", titulo: "Mão na lente", tc: "transição da cena 9\nse o vídeo antigo não tiver", desenho: "mao",
+    notas: ["Mesmo enquadramento do vídeo de exemplo.",
+            "Leve a mão até cobrir a lente inteira e depois tire.",
+            "O corte acontece no frame todo coberto (e ali entra o whoosh)."] },
+  { chip: "X", titulo: "Se a câmera estiver deitada (16:9)", tc: "vale para A e B", desenho: "horizontal", wide: true,
+    notas: ["O vídeo vertical é só a faixa do meio: ~32% da largura, quase a coluna do meio da grade da câmera.",
+            "Rosto, mãos e microfone sempre dentro dessa faixa; o que ficar fora é cortado.",
+            "Ideal: girar a câmera na vertical (suporte em L ou cabeça do tripé). Aí a grade da câmera vira a grade do Reels.",
+            "Gravando em 4K deitado, dá para tirar o Ângulo A com zoom digital do B, se não quiser gravar a fala duas vezes."] },
+];
+
+const NS = "http://www.w3.org/2000/svg";
+const W = 90, H = 160;
+const el = (tag, attrs = {}, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; };
+
+function pessoa(g, cx, eyeY, s, cor = "var(--vf-body)", cabeca = "var(--vf-head)", mic = true) {
+  const sy = eyeY + 13 * s;
+  el("path", { d: `M${cx-17*s} ${H} L${cx-17*s} ${sy+8*s} Q${cx-17*s} ${sy} ${cx-9*s} ${sy-1*s} L${cx+9*s} ${sy-1*s} Q${cx+17*s} ${sy} ${cx+17*s} ${sy+8*s} L${cx+17*s} ${H} Z`, fill: cor }, g);
+  el("rect", { x: cx-2.6*s, y: eyeY+5*s, width: 5.2*s, height: 8*s, fill: cor }, g);
+  el("ellipse", { cx, cy: eyeY, rx: 6.2*s, ry: 7.6*s, fill: cabeca }, g);
+  el("circle", { cx: cx-2.3*s, cy: eyeY, r: .55*s, fill: "var(--vf-bg)" }, g);
+  el("circle", { cx: cx+2.3*s, cy: eyeY, r: .55*s, fill: "var(--vf-bg)" }, g);
+  if (mic) {
+    el("rect", { x: cx-6*s, y: sy+5*s, width: 2.4*s, height: 7*s, rx: .8*s, fill: "#dfe4e9" }, g);
+    el("circle", { cx: cx-4.8*s, cy: sy+4.6*s, r: 1.7*s, fill: "#59616b" }, g);
+  }
+}
+
+function grade(svg, w = W, h = H) {
+  const g = el("g", { stroke: "var(--vf-grid)", "stroke-width": .5, "stroke-dasharray": "2 1.5" }, svg);
+  for (const f of [1/3, 2/3]) { el("line", { x1: w*f, y1: 0, x2: w*f, y2: h }, g); el("line", { x1: 0, y1: h*f, x2: w, y2: h*f }, g); }
+}
+
+function interfaceIG(svg) {
+  const defs = el("defs", {}, svg);
+  const p = el("pattern", { id: "hatch" + Math.random().toString(36).slice(2, 7), width: 3, height: 3, patternUnits: "userSpaceOnUse", patternTransform: "rotate(45)" }, defs);
+  el("rect", { width: 1.3, height: 3, fill: "rgba(255,90,90,.55)" }, p);
+  const fill = `url(#${p.id})`;
+  el("rect", { x: 0, y: H*.82, width: W, height: H*.18, fill }, svg);
+  el("rect", { x: W*.86, y: H*.52, width: W*.14, height: H*.30, fill }, svg);
+}
+
+function olhos(svg, y) {
+  el("line", { x1: 0, y1: y, x2: 6, y2: y, stroke: "var(--accent)", "stroke-width": 1.2 }, svg);
+  el("line", { x1: W-6, y1: y, x2: W, y2: y, stroke: "var(--accent)", "stroke-width": 1.2 }, svg);
+}
+
+function texto(svg, x, y, w, h, label, size) {
+  el("rect", { x, y, width: w, height: h, fill: "rgba(245,208,0,.18)", stroke: "var(--accent)", "stroke-width": .5 }, svg);
+  const t = el("text", { x: x + w/2, y: y + h/2 + size*.35, "text-anchor": "middle", fill: "var(--vf-text)", "font-family": "Barlow Condensed, Arial Narrow, sans-serif", "font-weight": 700, "font-size": size }, svg);
+  t.textContent = label;
+}
+
+function fundo(svg) {
+  el("rect", { width: W, height: H, fill: "var(--vf-wall)" }, svg);
+  el("rect", { x: 6, y: 34, width: 16, height: 21, fill: "none", stroke: "#4a535d", "stroke-width": 1 }, svg);
+  el("rect", { x: 66, y: 40, width: 14, height: 18, fill: "none", stroke: "#4a535d", "stroke-width": 1 }, svg);
+}
+
+const DESENHOS = {
+  A(svg) {
+    fundo(svg);
+    pessoa(svg, 45, 61, 1.9);
+    texto(svg, 10, 18, 70, 20, "TEXTO GIGANTE", 10);
+    grade(svg); interfaceIG(svg); olhos(svg, 61);
+  },
+  entrada(svg) {
+    fundo(svg);
+    const ghost = el("g", { opacity: .55, transform: "rotate(-8 70 110)" }, svg);
+    pessoa(ghost, 70, 66, 1.9, "var(--vf-ghost)", "var(--vf-ghost)", false);
+    pessoa(svg, 45, 61, 1.9);
+    const a = el("g", { stroke: "var(--accent)", "stroke-width": 1.6, fill: "none", "stroke-linecap": "round" }, svg);
+    el("path", { d: "M78 92 Q66 86 56 90" }, a); el("path", { d: "M58 85 L55 90 L61 92" }, a);
+    for (const y of [70, 76, 82]) el("line", { x1: 80, y1: y, x2: 87, y2: y + 1, stroke: "var(--vf-grid)", "stroke-width": .8 }, svg);
+    grade(svg); interfaceIG(svg); olhos(svg, 61);
+  },
+  B(svg) {
+    fundo(svg);
+    pessoa(svg, 45, 54, 1.25);
+    el("polygon", { points: `0,104 ${W},120 ${W},${H} 0,${H}`, fill: "var(--vf-desk)" }, svg);
+    texto(svg, 32, 80, 26, 9, "legenda", 7);
+    grade(svg); interfaceIG(svg); olhos(svg, 54);
+  },
+  mao(svg) {
+    fundo(svg);
+    const g = el("g", { opacity: .5 }, svg); pessoa(g, 45, 61, 1.9);
+    const m = el("g", { fill: "#c9a58a" }, svg);
+    el("ellipse", { cx: 46, cy: 92, rx: 34, ry: 40 }, m);
+    [[18, 50, -18], [32, 36, -6], [48, 32, 4], [63, 38, 14]].forEach(([x, y, r]) => el("rect", { x, y, width: 12, height: 40, rx: 6, transform: `rotate(${r} ${x+6} ${y+20})` }, m));
+    el("rect", { x: 70, y: 86, width: 12, height: 32, rx: 6, transform: "rotate(48 76 102)" }, m);
+    grade(svg); interfaceIG(svg);
+  },
+};
+
+function horizontal(svg) {
+  const w = 160, h = 90, cw = h * 9 / 16, cx = (w - cw) / 2;
+  el("rect", { width: w, height: h, fill: "var(--vf-wall)" }, svg);
+  el("rect", { x: 14, y: 18, width: 20, height: 26, fill: "none", stroke: "#4a535d", "stroke-width": 1 }, svg);
+  el("rect", { x: 126, y: 22, width: 18, height: 22, fill: "none", stroke: "#4a535d", "stroke-width": 1 }, svg);
+  const s = .9, ey = 34, sy = ey + 13 * s, px = w / 2;
+  el("path", { d: `M${px-17*s} ${h} L${px-17*s} ${sy+8*s} Q${px-17*s} ${sy} ${px-9*s} ${sy-s} L${px+9*s} ${sy-s} Q${px+17*s} ${sy} ${px+17*s} ${sy+8*s} L${px+17*s} ${h} Z`, fill: "var(--vf-body)" }, svg);
+  el("ellipse", { cx: px, cy: ey, rx: 6.2*s, ry: 7.6*s, fill: "var(--vf-head)" }, svg);
+  el("polygon", { points: `0,68 ${w},74 ${w},${h} 0,${h}`, fill: "var(--vf-desk)" }, svg);
+  el("rect", { x: 0, y: 0, width: cx, height: h, fill: "rgba(10,12,15,.62)" }, svg);
+  el("rect", { x: cx + cw, y: 0, width: cx, height: h, fill: "rgba(10,12,15,.62)" }, svg);
+  el("rect", { x: cx, y: 0, width: cw, height: h, fill: "none", stroke: "var(--accent)", "stroke-width": 1.2 }, svg);
+  grade(svg, w, h);
+  const t = el("text", { x: cx + cw / 2, y: 8, "text-anchor": "middle", fill: "var(--accent)", "font-family": "JetBrains Mono, monospace", "font-size": 4.2 }, svg);
+  t.textContent = "recorte 9:16";
+  const t2 = el("text", { x: cx / 2, y: 86, "text-anchor": "middle", fill: "#c4cbd2", "font-family": "JetBrains Mono, monospace", "font-size": 3.8 }, svg);
+  t2.textContent = "cortado";
+  const t3 = el("text", { x: cx + cw + cx / 2, y: 86, "text-anchor": "middle", fill: "#c4cbd2", "font-family": "JetBrains Mono, monospace", "font-size": 3.8 }, svg);
+  t3.textContent = "cortado";
+}
+
+const total = CENAS[CENAS.length - 1].t[1];
+const strip = document.getElementById("strip");
+for (const c of CENAS) {
+  const d = document.createElement("div");
+  d.className = "seg " + c.k;
+  d.style.flex = String(c.t[1] - c.t[0]);
+  d.title = `Cena ${c.n} · ${c.t[0]}–${c.t[1]} s · ${c.nome}`;
+  d.innerHTML = `<small>${c.n}</small>${c.nome}`;
+  strip.appendChild(d);
+}
+
+const board = document.getElementById("board");
+for (const q of QUADROS) {
+  const card = document.createElement("article");
+  card.className = "card" + (q.wide ? " wide" : "");
+  const fr = document.createElement("div"); fr.className = "frame";
+  const svg = el("svg", q.desenho === "horizontal" ? { viewBox: "0 0 160 90", role: "img", "aria-label": q.titulo } : { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": q.titulo });
+  el("rect", { width: "100%", height: "100%", fill: "var(--vf-bg)" }, svg);
+  (q.desenho === "horizontal" ? horizontal : DESENHOS[q.desenho])(svg);
+  fr.appendChild(svg);
+  const tag = document.createElement("div"); tag.className = "tag";
+  tag.innerHTML = `<h3><span class="chip ${q.chip}">${q.chip === "X" ? "EXTRA" : q.chip}</span>${q.titulo}</h3><span class="tc">${q.tc.replace("\n", "<br>")}</span>`;
+  const ul = document.createElement("ul");
+  for (const n of q.notas) { const li = document.createElement("li"); li.textContent = n; ul.appendChild(li); }
+  card.append(fr, tag, ul);
+  if (q.fala) { const f = document.createElement("p"); f.className = "fala"; f.innerHTML = "<b>Fala neste ângulo</b>"; f.append(q.fala); card.appendChild(f); }
+  board.appendChild(card);
+}
+</script>
