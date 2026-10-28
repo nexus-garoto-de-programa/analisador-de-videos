@@ -36,8 +36,10 @@ Material para o dono, o videomaker e o editor (e para imprimir).
 - O boneco é uma **silhueta anônima** (sem rosto, sem microfone, sem detalhes). Formato sempre 9:16.
 - Última folha: "Ordem de gravação" (videomaker) e "Para o editor": "A intenção (não pode faltar)" e
   "Fica a seu critério". O dono confia na criatividade do editor: oriente a intenção, não trave.
-- Gere o PDF (Playwright `page.pdf`, `preferCSSPageSize`) e um PNG das folhas ao lado do HTML, publique a
-  página como Artifact e ponha os links no topo do roteiro.
+- Gere o PDF (Playwright `page.pdf`, `preferCSSPageSize`) e um PNG das folhas ao lado do HTML.
+- Publique a página como Artifact **com o botão "Exportar PDF"**: `capabilities: {downloads: true}` e
+  `files: {"prancheta.pdf": "<caminho do PDF>"}` (ajuste `PDF.nome` no script). Toda vez que o PDF mudar,
+  publique de novo com o `files`. Ponha os links no topo do roteiro.
 
 ## Entregar
 - Roteiro novo nasce com status `rascunho`. Quando o dono aprovar, siga a skill `treinar`
