@@ -17,4 +17,7 @@ Formato:
 
 ---
 
-_(nenhuma lição ainda)_
+## 2026-10-28 — roteiros/2026-10-28-efeito-sonoro-conteudo.md (base: analises/2026-10-28-DbJEDXOxgkC) → promovida
+- **Eu disse:** "o vídeo do seu negócio", "o vídeo da sua empresa", "vídeo de empresa" (nas falas do roteiro).
+- **O certo é:** "eu nunca falaria 'vídeos de empresa ou negócio'. Eu falaria 'conteúdos' ou 'conteúdos estratégicos'."
+- **Regra geral:** nas falas, legendas e textos na tela dos roteiros, chamar o que o público produz de "conteúdo(s)" / "conteúdo estratégico" — nunca "vídeo de empresa", "vídeo do seu negócio" ou parecidos. O público continua sendo quem vende; muda o vocabulário, não a mira.

@@ -8,7 +8,7 @@ o Claude pergunta e preenche aqui.
 - **Público (quem, idade, dor, desejo):** profissionais e negócios (empreendedores, profissionais liberais, lojas) que gravam vídeo para vender e acham o próprio vídeo sem graça
 - **Objetivo dos vídeos (seguidores, vendas, agendamentos, autoridade…):**
 - **Tom de voz (sério, engraçado, direto, acolhedor…):**
-- **Expressões que eu uso / que eu nunca uso:**
+- **Expressões que eu uso / que eu nunca uso:** uso "conteúdos", "conteúdos estratégicos". Nunca uso "vídeo de empresa", "vídeo do seu negócio".
 - **Como eu gravo (sozinho, celular, tripé, tem ajudante, lugar):** sozinho, câmera no tripé. Tenho acervo de vídeos antigos (crus e editados) para antes/depois e b-roll
 - **Editor que eu uso (CapCut, InShot, Premiere…):** CapCut ou Premiere
 - **CTA preferido:**

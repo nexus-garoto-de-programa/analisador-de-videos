@@ -12,7 +12,7 @@ Este é o jeito de assistir a um vídeo. Ele **evolui**: cada correção vira um
 > Regras aprendidas com as correções. Valem mais do que qualquer coisa abaixo.
 > Formato: `- [AAAA-MM-DD] regra (origem: analises/<pasta>)`
 
-_(nenhuma ainda)_
+- [2026-10-28] Roteiros: o dono fala "conteúdos" / "conteúdos estratégicos", **nunca** "vídeo de empresa" ou "vídeo do seu negócio". Vale para fala, texto na tela e legenda do post. (origem: roteiros/2026-10-28-efeito-sonoro-conteudo.md)
 
 ---
 
