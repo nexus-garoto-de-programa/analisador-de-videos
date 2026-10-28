@@ -73,8 +73,13 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--body); }
 .sw.txt { background: linear-gradient(transparent 2px, var(--accent) 2px 8px, transparent 8px), #2b3138; }
 .sw.ui { background: repeating-linear-gradient(135deg, rgba(255,110,110,.7) 0 2px, transparent 2px 4px), #2b3138; }
 
+a.ref { color: var(--fg); font: 600 13px/1.3 var(--body); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 3px; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.refline { grid-column: 1 / -1; font: 500 11px/1.4 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+.refline a.ref { text-transform: none; letter-spacing: 0; margin-left: 4px; }
+.refbox { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; background: var(--soft); border-left: 4px solid var(--accent); padding: 10px 14px; font-size: 13.5px; }
+.refbox b { font: 700 15px/1.2 var(--display); text-transform: uppercase; letter-spacing: .02em; }
 /* folha final */
-.closing { display: grid; grid-template-columns: 1fr 1.35fr; gap: 28px; min-height: 0; }
+.closing { display: grid; grid-template-columns: 1fr 1.35fr; gap: 16px 28px; min-height: 0; align-content: start; }
 .closing h3 { margin: 0 0 10px; font: 700 20px/1 var(--display); text-transform: uppercase; letter-spacing: .03em; }
 ol.steps { margin: 0; padding: 0; list-style: none; counter-reset: s; display: grid; gap: 9px; }
 ol.steps li { counter-increment: s; display: grid; grid-template-columns: 26px 1fr; gap: 0 10px; font-size: 13.5px; line-height: 1.4; }
@@ -110,6 +115,7 @@ ol.steps b { font: 700 15px/1.2 var(--display); text-transform: uppercase; lette
 <script>
 // Dados da prancheta. Para um roteiro novo, troque ROTEIRO, CENAS, FOLHAS e FECHAMENTO.
 const ROTEIRO = "Efeito sonoro · conteúdos cremosos · 9:16 (Reels) · ~33 s";
+const REFERENCIA = { url: "https://www.instagram.com/reel/DbJEDXOxgkC/", nome: "Reels de @abigaildaniellla" }; // vídeo que inspirou o roteiro
 
 const CENAS = [ // faixa colorida do topo de cada folha
   { t: [0, 2.7], k: "A" }, { t: [2.7, 4], k: "B" }, { t: [4, 9.2], k: "S" }, { t: [9.2, 13.9], k: "B" },
@@ -305,6 +311,7 @@ function cabecalho(i, titulo, faixa) {
   const sub = document.createElement("div"); sub.className = "slate"; sub.style.gridColumn = "1 / -1";
   sub.textContent = faixa ? `${seg(faixa[0])}–${seg(faixa[1])} s` : "antes de gravar e editar";
   h.appendChild(sub);
+  if (i === 1) h.insertAdjacentHTML("beforeend", `<div class="refline">Vídeo de referência:<a class="ref" href="${REFERENCIA.url}" target="_blank" rel="noopener">${REFERENCIA.nome} · ${REFERENCIA.url}</a></div>`);
   return h;
 }
 function rodape() {
@@ -338,7 +345,8 @@ FOLHAS.forEach((F, i) => {
 const fim = document.createElement("section"); fim.className = "page";
 fim.appendChild(cabecalho(nFolhas, "Gravação e <em>edição</em>", null));
 const cl = document.createElement("div"); cl.className = "closing";
-cl.innerHTML = `<div><h3>Ordem de gravação</h3><ol class="steps">${FECHAMENTO.passos.map(([t, d]) => `<li><b>${t}</b><span>${d}</span></li>`).join("")}</ol></div>
+cl.innerHTML = `<div class="refbox"><b>Vídeo de referência</b><a class="ref" href="${REFERENCIA.url}" target="_blank" rel="noopener">${REFERENCIA.nome} · ${REFERENCIA.url}</a><span>Assista antes de gravar e de editar: é o ritmo e a estrutura que este roteiro segue.</span></div>
+<div><h3>Ordem de gravação</h3><ol class="steps">${FECHAMENTO.passos.map(([t, d]) => `<li><b>${t}</b><span>${d}</span></li>`).join("")}</ol></div>
 <div><h3>Para o editor</h3><p class="ed-note">Isto é um norte, não uma receita. Os tempos são referência. Confio na sua criatividade: se tiver uma ideia melhor, faça e me mostre. Só não deixe a intenção se perder.</p>
 <div class="cols"><div><h4>A intenção (não pode faltar)</h4><ul>${FECHAMENTO.intencao.map(x => `<li>${x}</li>`).join("")}</ul></div>
 <div class="free"><h4>Fica a seu critério</h4><ul>${FECHAMENTO.livre.map(x => `<li>${x}</li>`).join("")}</ul></div></div></div>`;

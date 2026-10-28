@@ -26,7 +26,8 @@ description: Cria um roteiro de vídeo curto com a mesma estrutura de um vídeo 
 ## Prancheta de enquadramento (sempre junto do roteiro)
 Material para o dono, o videomaker e o editor (e para imprimir).
 - Copie `templates/prancheta.html` para `roteiros/AAAA-MM-DD-<tema>-prancheta.html` e troque só os dados
-  `ROTEIRO`, `CENAS`, `FOLHAS` e `FECHAMENTO` no `<script>`.
+  `ROTEIRO`, `REFERENCIA` (link do vídeo original, clicável no topo da folha 1 e na folha de gravação e
+  edição), `CENAS`, `FOLHAS` e `FECHAMENTO` no `<script>`.
 - **Folhas A4 deitadas**, uma por faixa de tempo (~3 folhas para ~30 s): à esquerda, de 1 a 4 quadros
   dos ângulos daquela faixa (9:16, grade 3×3, linha dos olhos, onde entra o texto, interface do Instagram);
   à direita, as falas da faixa com tempo, ângulo e uma linha discreta de "tela" e "som".
