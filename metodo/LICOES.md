@@ -17,6 +17,11 @@ Formato:
 
 ---
 
+## 2026-10-28 — roteiros/2026-10-28-efeito-sonoro-conteudo.md (prancheta) → promovida
+- **Eu disse:** quadro "Se a câmera estiver deitada (16:9)", com recorte 9:16 e zoom digital em 4K.
+- **O certo é:** "eu nunca vou fazer isso. Eu sempre vou gravar o vídeo em 9:16, que sempre vai ser para versão Reels. Quando for um conteúdo diferenciado, que eu vou gravar no formato diferente, aí eu vou falar."
+- **Regra geral:** assumir sempre 9:16 vertical. Não oferecer alternativas de formato nem quadros "e se…" que o dono não pediu.
+
 ## 2026-10-28 — roteiros/2026-10-28-efeito-sonoro-conteudo.md (base: analises/2026-10-28-DbJEDXOxgkC)
 - **Eu disse:** "É assim que os seus conteúdos deixam de ser chatos e passam a prender."
 - **O certo é:** "É assim que os seus conteúdos deixam de ser chatos e passam a ser cremosos." — "eu coloco esse toque diferenciado no final das coisas. Nem sempre, porque horas isso é aplicável, horas não. Mas pelo menos nos dois blocos iniciais, que são dos ganchos, eu vejo que isso aí é interessante aplicar."
