@@ -27,6 +27,6 @@ Neutros (derivados, puxados para o roxo): texto secundário `#6A6778`, linhas `#
 - Símbolo grande e bem transparente (~6%) saindo pelo canto de baixo à direita das folhas.
 
 ## Tipografia
-- **Plus Jakarta Sans** (Google Fonts) — títulos 800 e texto 400–700. **Provisória:** escolhida por ser
-  parecida com a do logo; troque aqui quando o dono informar a fonte oficial.
+- **Plus Jakarta Sans** (Google Fonts) — **fonte oficial da marca** (confirmada pelo dono em 2026-10-28).
+  Títulos 800, texto 400–700.
 - **JetBrains Mono** — tempos, etiquetas pequenas, rodapés.
