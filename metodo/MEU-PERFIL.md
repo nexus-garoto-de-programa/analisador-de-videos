@@ -3,7 +3,7 @@
 Usado para adaptar os roteiros. Se algum campo estiver vazio quando um roteiro for pedido,
 o Claude pergunta e preenche aqui.
 
-- **Quem sou / marca:**
+- **Quem sou / marca:** Nexus. Design system em `marca/MARCA.md` (roxo `#7463EA`, escuro `#14121C`, claro `#E8E8E8`). Destaque das legendas nos meus vídeos = roxo da marca.
 - **Nicho e temas:** dicas de vídeo/conteúdo para negócios (inferido do 1º roteiro, 2026-10-28 — confirmar)
 - **Público (quem, idade, dor, desejo):** profissionais e negócios (empreendedores, profissionais liberais, lojas) que gravam vídeo para vender e acham o próprio vídeo sem graça
 - **Objetivo dos vídeos (seguidores, vendas, agendamentos, autoridade…):**

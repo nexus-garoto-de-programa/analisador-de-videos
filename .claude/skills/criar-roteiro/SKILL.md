@@ -31,6 +31,8 @@ Material para o dono, o videomaker e o editor (e para imprimir).
 - **Folhas A4 deitadas**, uma por faixa de tempo (~3 folhas para ~30 s): à esquerda, de 1 a 4 quadros
   dos ângulos daquela faixa (9:16, grade 3×3, linha dos olhos, onde entra o texto, interface do Instagram);
   à direita, as falas da faixa com tempo, ângulo e uma linha discreta de "tela" e "som".
+- Identidade **Nexus** (`marca/MARCA.md`): o modelo já vem com cores, fonte, logo e símbolo; não troque.
+  O destaque das legendas no vídeo é o roxo da marca.
 - O boneco é uma **silhueta anônima** (sem rosto, sem microfone, sem detalhes). Formato sempre 9:16.
 - Última folha: "Ordem de gravação" (videomaker) e "Para o editor": "A intenção (não pode faltar)" e
   "Fica a seu critério". O dono confia na criatividade do editor: oriente a intenção, não trave.

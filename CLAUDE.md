@@ -32,5 +32,6 @@ como o dono analisaria e depois cria roteiros na mesma estrutura. O método é t
   Só mede; a interpretação é do Claude.
 - `scripts/setup.sh` — cria `.venv` com as dependências (roda no início de cada sessão).
 - `metodo/` — `METODO.md` (as 10 lentes + Regras do dono), `LICOES.md`, `MEU-PERFIL.md`.
-- `templates/` — `analise.md`, `roteiro.md`.
+- `templates/` — `analise.md`, `roteiro.md`, `prancheta.html`.
+- `marca/` — design system da Nexus (`MARCA.md`, `tokens.css`, logo e símbolo). Todo material visual usa a marca.
 - `analises/` — uma pasta por vídeo + `INDICE.md`. `roteiros/` — roteiros gerados.
