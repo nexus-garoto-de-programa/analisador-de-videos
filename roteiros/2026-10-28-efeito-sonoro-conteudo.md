@@ -6,7 +6,7 @@
 - **Tom:** direto e didático (o perfil ainda não define o tom; usei o do original)
 
 ## 3 opções de gancho
-1. **promessa + identificação** (a mecânica do original) — Fala: "É assim que os seus *conteúdos* deixam de ser chatos e passam a prender." · Visual: você entrando no quadro já em movimento, dedo apontando para a câmera; corte para o 2º ângulo no "chato". · Texto na tela: a fala palavra a palavra, gigante, branca, no topo; "CONTEÚDOS" em amarelo.
+1. **promessa + identificação** (a mecânica do original) — Fala: "É assim que os seus *conteúdos* deixam de ser chatos e passam a ser *cremosos*." · Visual: você entrando no quadro já em movimento, dedo apontando para a câmera; corte para o 2º ângulo depois de "chatos". · Texto na tela: a fala palavra a palavra, gigante, branca, no topo; "CONTEÚDOS" e "CREMOSOS" em amarelo. "Cremosos" é o seu toque pessoal no fim da frase.
 2. **medo/erro + curiosidade** — Fala: "Se o seu conteúdo parece amador, o problema talvez nem seja a imagem." · Visual: você em plano médio; no "imagem", corte seco para um vídeo antigo seu cru, sem som nenhum, por 0,5 s. · Texto na tela: "PARECE AMADOR?" no topo, fixo nos 3 s.
 3. **resultado primeiro** — Fala: "Mesmo vídeo. / Mesma fala. / Só mudei uma coisa." · Visual: o mesmo trecho de um vídeo antigo seu duas vezes, a 1ª sem efeitos (moldura branca), a 2ª com efeitos (tela cheia). · Texto na tela: "SEM" sobre o 1º, "COM" sobre o 2º.
 
@@ -17,9 +17,9 @@
 
 | # | Tempo | Bloco | Visual / enquadramento | Fala | Texto na tela | Edição / efeito | Som |
 |---|---|---|---|---|---|---|---|
-| 1 | 0–2,7 s | gancho | **Ângulo A**: plano médio-fechado, você entra/ajeita no quadro (a 1ª imagem já em movimento), dedo para a câmera | "É assim que os seus conteúdos…" | 1 palavra por vez, gigante, branca, bold, no topo; "CONTEÚDOS" em amarelo | texto aparece com pop | voz seca no 0,0 s + trilha baixa; *pop* leve na entrada do texto |
-| 2 | 2,7–3,8 s | gancho | **Ângulo B**: mais aberto, mesa em primeiro plano | "…deixam de ser chatos e passam a prender." | "CHATOS" … "PRENDER." | corte de ângulo no meio da frase | *whoosh* curto no corte |
-| 3 | 3,8–7,4 s | contexto | Montagem de 3 trechos dos seus vídeos editados (~1,2 s cada) | "Parte 1 da série onde eu te ensino a levar os seus conteúdos…" | legenda passa a ser **pequena, branca, no centro**, 1–2 palavras | cortes secos entre os trechos | trilha |
+| 1 | 0–2,7 s | gancho | **Ângulo A**: plano médio-fechado, você entra/ajeita no quadro (a 1ª imagem já em movimento), dedo para a câmera | "É assim que os seus conteúdos deixam de ser chatos…" | 1 palavra por vez, gigante, branca, bold, no topo; "CONTEÚDOS" em amarelo | texto aparece com pop | voz seca no 0,0 s + trilha baixa; *pop* leve na entrada do texto |
+| 2 | 2,7–4 s | gancho | **Ângulo B**: mais aberto, mesa em primeiro plano; sorriso/olhar de cumplicidade no "cremosos" | "…e passam a ser cremosos." | "e" … "CREMOSOS." em amarelo, um pouco maior | corte de ângulo no meio da frase | *whoosh* curto no corte |
+| 3 | 4–7,4 s | contexto | Montagem de 3 trechos dos seus vídeos editados (~1,2 s cada) | "Parte 1 da série onde eu te ensino a levar os seus conteúdos…" | legenda passa a ser **pequena, branca, no centro**, 1–2 palavras | cortes secos entre os trechos | trilha |
 | 4 | 7,4–8,1 s | antes | Vídeo antigo **cru**, encolhido numa moldura branca | "…disso…" | — | corte exatamente no "disso" | **trilha corta: silêncio total** sob o vídeo cru (o contraste já é a prova) |
 | 5 | 8,1–9,2 s | depois | Vídeo antigo **editado**, tela cheia | "…pra isso." | — | corte exatamente no "isso" | trilha volta + *impacto* no corte |
 | 6 | 9,2–12 s | mistério | Ângulo B, mãos abertas | "Esse é o detalhe mais ignorado em conteúdo estratégico…" | legenda centro | — | trilha |
@@ -35,7 +35,7 @@
 | 16 | 27–33,5 s | CTA | Ângulo B, plano único | "Se você quer a lista dos sites onde eu pego todos os meus efeitos de graça, / comenta *SOM*. / E se quer a parte 2 da série, me segue." | legenda centro; "SOM" entre aspas | sem cortes | trilha; nenhum efeito (o CTA respira) |
 
 ## Texto corrido para ler
-É assim que os seus *conteúdos* / deixam de ser *chatos* e passam a *prender*.
+É assim que os seus *conteúdos* / deixam de ser *chatos* / e passam a ser *cremosos*.
 Parte 1 da série onde eu te ensino a levar os seus conteúdos / *disso* / pra *isso*.
 Esse é o detalhe mais *ignorado* em conteúdo estratégico, / porque ninguém percebe que ele está ali. / Só quando *falta*. //
 *Efeito sonoro.*
@@ -54,7 +54,7 @@ Se você quer a lista dos sites onde eu pego todos os meus efeitos *de graça*, 
 
 ## Edição
 - Música: trilha instrumental contínua de energia média (~120–132 BPM, lo-fi/house leve), **mais baixa que no original** (a voz e os efeitos têm que aparecer) · corte na batida: não (os cortes seguem a fala, palavra por palavra).
-- Legendas: gancho [0–3,8 s] em fonte bold gigante, branca, 1 palavra, no topo, "SEU NEGÓCIO" amarelo; resto em fonte fina, pequena, branca, 1–2 palavras, centro. No CapCut: legenda automática e depois ajuste o estilo em dois blocos.
+- Legendas: gancho [0–4 s] em fonte bold gigante, branca, 1 palavra, no topo, "CONTEÚDOS" e "CREMOSOS" em amarelo; resto em fonte fina, pequena, branca, 1–2 palavras, centro. No CapCut: legenda automática e depois ajuste o estilo em dois blocos.
 - Efeitos (CapCut tem biblioteca em "Áudio → Efeitos"; no Premiere, use a lista que você vai mandar no CTA):
   - [0,2 s] pop na entrada do texto · [2,7 s] whoosh no corte de ângulo
   - [7,4–8,1 s] **silêncio total** no vídeo cru · [8,1 s] impacto no "isso"
@@ -77,6 +77,7 @@ O efeito sonoro é o detalhe que ninguém percebe e que mais separa conteúdo am
 ## O que eu mantive e o que mudei em relação ao original
 - **Mantive (mecânica):** gancho de promessa com texto gigante palavra a palavra e palavra-chave em amarelo; troca de ângulo no meio da 1ª frase; série; antes/depois cortado no "disso / pra isso"; mistério de ~5 s sem dizer o assunto; revelação em cartela branca; lista de 4 itens com slide e exemplo, cortes exatos na palavra; o próprio vídeo usado como exemplo; CTA duplo (palavra-chave que fecha um loop + seguir para a próxima parte); duração ~33 s.
 - **Mudei:**
+  - **Toque pessoal:** o gancho fecha com "cremosos" (sua assinatura) no lugar de uma palavra comum como "prender".
   - **Público:** "talking head de criador" virou "os seus conteúdos / conteúdo estratégico" (nunca "vídeo de empresa/negócio" — lição de 2026-10-28).
   - **Série:** o original é a parte 2; aqui é a **parte 1** (você ainda não tem série), e o CTA de seguir chama para a parte 2.
   - **Lista:** mantive os 4 pontos do original (texto de abertura, overlays, transições, exemplos visuais), cada um com um exemplo seu.
