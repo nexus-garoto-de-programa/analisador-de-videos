@@ -17,6 +17,11 @@ Formato:
 
 ---
 
+## 2026-10-28 — roteiros/2026-10-28-efeito-sonoro-conteudo.md (base: analises/2026-10-28-DbJEDXOxgkC)
+- **Eu disse:** troquei 2 dos 4 itens da lista do original ("overlays" e "visual examples") por "preço ou número" e "produto na tela", para "falar a língua de quem vende".
+- **O certo é:** "foi tirado as coisas que no roteiro original fala sobre o verlês [overlays], etc. Eu quero falar sobre isso também no vídeo. Essa parte de quando o produto aparece, pra mim não faz tanto sentido."
+- **Regra geral:** quando o dono pede um roteiro sobre o mesmo tema do vídeo analisado, manter os pontos de conteúdo do original (itens da lista, dicas) e recriar só as palavras e os exemplos. Não trocar itens por conta própria para "adaptar ao público"; se achar que um item não serve, sugerir a troca no chat em vez de já trocar.
+
 ## 2026-10-28 — roteiros/2026-10-28-efeito-sonoro-conteudo.md (base: analises/2026-10-28-DbJEDXOxgkC) → promovida
 - **Eu disse:** "o vídeo do seu negócio", "o vídeo da sua empresa", "vídeo de empresa" (nas falas do roteiro).
 - **O certo é:** "eu nunca falaria 'vídeos de empresa ou negócio'. Eu falaria 'conteúdos' ou 'conteúdos estratégicos'."

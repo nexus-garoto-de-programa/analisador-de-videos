@@ -26,12 +26,12 @@
 | 7 | 12–13,9 s | mistério | Ângulo B, olhos fechados, dedo levantado (segura o plano) | "…porque ninguém percebe que ele está ali. / Só quando falta." | legenda centro | plano mais longo, sem corte | **trilha some 0,3 s antes da revelação** |
 | 8 | 13,9–14,9 s | revelação | Cartela branca, texto preto itálico "Efeito sonoro" surgindo palavra a palavra | "Efeito sonoro." | "Efeito sonoro" | cartela | *impacto grave* no "sonoro" + trilha volta |
 | 9 | 14,9–18,8 s | benefício + exemplo | Vídeo antigo seu com texto animado, encolhido na moldura branca; abre com a mão tapando a lente | "Bem colocado, ele faz cada corte ser sentido, e o seu cliente assiste até o fim." | legenda centro | transição de mão na lente | *whoosh* na mão + *pop* em cada palavra do texto do exemplo |
-| 10 | 18,8–19,7 s | exemplo 2 | Cartela branca: "R$ 97" digitando número a número | — (fala da cena 9 termina aqui) | "R$ 97" | texto tipo máquina de escrever | *teclado* + *caixa registradora* no fim |
+| 10 | 18,8–19,7 s | exemplo 2 | Cartela branca: um texto de abertura seu sendo digitado letra a letra (ex.: "3 erros que deixam seu conteúdo chato") | — (fala da cena 9 termina aqui) | o texto digitado | texto tipo máquina de escrever | *teclado* |
 | 11 | 19,7–22 s | re-gancho | Ângulo B | "E é exatamente aqui que eu coloco os meus:" | legenda centro | — | trilha |
 | 12 | 22–23,2 s | item 1 | Slide branco, título preto no topo "Texto de abertura" + **o início deste próprio vídeo** encolhido | "No texto de abertura," | "Texto de abertura" | corte exato na palavra | *pop* |
-| 13 | 23,2–24,4 s | item 2 | Slide "Preço ou número" + trecho seu mostrando um valor na tela | "quando aparece preço ou número," | "Preço ou número" | corte exato | *caixa registradora / ding* |
-| 14 | 24,4–25,6 s | item 3 | Slide "Transição" + o 1º trecho da cena 3 | "na transição," | "Transição" | corte exato | *whoosh* |
-| 15 | 25,6–27 s | item 4 | Slide "Produto na tela" + trecho seu mostrando produto/serviço | "e quando o produto aparece." | "Produto na tela" | corte exato | *brilho / shimmer* |
+| 13 | 23,2–24,4 s | item 2 | Slide "Overlays" + trecho seu com algo sobreposto (print, imagem, emoji ou vídeo por cima de você) | "nos overlays," | "Overlays" | corte exato | *swipe / pop* quando o overlay entra |
+| 14 | 24,4–25,6 s | item 3 | Slide "Transições" + o 1º trecho da cena 3 | "nas transições, quando precisa," | "Transições" | corte exato | *whoosh* |
+| 15 | 25,6–27 s | item 4 | Slide "Exemplos visuais" + trecho seu em que aparece uma imagem/print ilustrando o que você fala (ou o ícone do app que você usa) | "e nos exemplos visuais." | "Exemplos visuais" | corte exato | *click / ding* quando o exemplo aparece |
 | 16 | 27–33,5 s | CTA | Ângulo B, plano único | "Se você quer a lista dos sites onde eu pego todos os meus efeitos de graça, / comenta *SOM*. / E se quer a parte 2 da série, me segue." | legenda centro; "SOM" entre aspas | sem cortes | trilha; nenhum efeito (o CTA respira) |
 
 ## Texto corrido para ler
@@ -40,7 +40,7 @@ Parte 1 da série onde eu te ensino a levar os seus conteúdos / *disso* / pra *
 Esse é o detalhe mais *ignorado* em conteúdo estratégico, / porque ninguém percebe que ele está ali. / Só quando *falta*. //
 *Efeito sonoro.*
 Bem colocado, ele faz cada corte ser *sentido*, / e o seu cliente assiste *até o fim*.
-E é exatamente aqui que eu coloco os meus: / no texto de abertura, / quando aparece preço ou número, / na transição, / e quando o produto aparece.
+E é exatamente aqui que eu coloco os meus: / no texto de abertura, / nos *overlays*, / nas transições, quando precisa, / e nos exemplos visuais.
 Se você quer a lista dos sites onde eu pego todos os meus efeitos *de graça*, / comenta *SOM*. / E se quer a parte 2 da série, / me segue.
 
 (~118 palavras → ~30 s de fala a 235 palavras/min; sobra respiro para a pausa antes da revelação e para os planos de exemplo.)
@@ -49,7 +49,7 @@ Se você quer a lista dos sites onde eu pego todos os meus efeitos *de graça*, 
 - [ ] Tomadas: a fala inteira **duas vezes**, mudando o tripé de lugar: **A** = plano médio-fechado, só você e o fundo; **B** = mais aberto e um pouco mais alto, com a mesa em primeiro plano. (Alternativa com uma tomada só: grave em 4K no enquadramento B e faça o A com zoom digital na edição.)
 - [ ] Tomada extra: entrar no quadro / ajeitar-se em movimento antes da 1ª palavra (para o frame 1 não ser parado).
 - [ ] Tomada extra: mão tapando a lente e saindo (para a transição da cena 9), se o vídeo antigo não tiver isso.
-- [ ] B-roll (do acervo): 3 trechos editados bonitos para a cena 3; 1 vídeo **cru** + 1 vídeo **editado** para o antes/depois; 1 trecho com preço/número na tela; 1 trecho mostrando produto/serviço; 1 trecho com texto animado.
+- [ ] B-roll (do acervo): 3 trechos editados bonitos para a cena 3; 1 vídeo **cru** + 1 vídeo **editado** para o antes/depois; 1 trecho com overlay (print, imagem ou emoji por cima de você); 1 trecho com exemplo visual (imagem/print ilustrando a fala); 1 trecho com texto animado.
 - [ ] Lugar / luz / figurino: o mesmo canto de trabalho, luz quente e lateral, roupa com textura (jaqueta, camisa) — algo que pareça "estúdio de criador", não fundo neutro vazio.
 
 ## Edição
@@ -60,8 +60,8 @@ Se você quer a lista dos sites onde eu pego todos os meus efeitos *de graça*, 
   - [7,4–8,1 s] **silêncio total** no vídeo cru · [8,1 s] impacto no "isso"
   - [13,6 s] trilha some · [14,2 s] impacto grave no "Efeito sonoro"
   - [14,9 s] whoosh na mão na lente · [15–18,8 s] pops no texto do exemplo
-  - [18,8–19,7 s] teclado + caixa registradora no "R$ 97"
-  - [22 s] pop · [23,2 s] ding · [24,4 s] whoosh · [25,6 s] shimmer (cada item da lista usa o efeito que ele ensina)
+  - [18,8–19,7 s] teclado no texto sendo digitado
+  - [22 s] pop · [23,2 s] swipe/pop · [24,4 s] whoosh · [25,6 s] click/ding (cada item da lista usa o efeito que ele ensina)
   - [27–33,5 s] nenhum efeito
 - Moldura branca: coloque o vídeo exemplo em escala ~75% sobre fundo branco (cenas 4, 9, 12–15) para sinalizar "isto é um exemplo".
 
@@ -79,8 +79,8 @@ O efeito sonoro é o detalhe que ninguém percebe e que mais separa conteúdo am
 - **Mudei:**
   - **Público:** "talking head de criador" virou "os seus conteúdos / conteúdo estratégico" (nunca "vídeo de empresa/negócio" — lição de 2026-10-28).
   - **Série:** o original é a parte 2; aqui é a **parte 1** (você ainda não tem série), e o CTA de seguir chama para a parte 2.
-  - **Lista:** troquei "overlays" e "visual examples" por **"preço ou número"** e **"produto na tela"**, que são os momentos que importam para quem vende.
-  - **Exemplo 2:** "R$ 97" com caixa registradora no lugar do "Verbal Hook", para falar a língua de negócio.
+  - **Lista:** mantive os 4 pontos do original (texto de abertura, overlays, transições, exemplos visuais), cada um com um exemplo seu.
+  - **Exemplo 2:** um texto de abertura seu sendo digitado, no lugar do "Verbal Hook" dela.
   - **Som como prova:** o antes fica em **silêncio total** e cada item da lista toca o efeito que ele ensina. No original não deu para confirmar onde estavam os efeitos; aqui eles são deliberados e marcados com tempo.
   - **Trilha mais baixa** que a do original, para a voz e os efeitos aparecerem.
   - **Palavra-chave:** "SOM" (em português, curta, fácil de digitar).
