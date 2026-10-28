@@ -19,6 +19,11 @@ como o dono analisaria e depois cria roteiros na mesma estrutura. O método é t
 - Vídeos, áudio e frames **não vão para o git** (`.gitignore`). Vão: `analise.md`,
   `relatorio_tecnico.md`, `metadados.json`, roteiros e o método.
 - Ao terminar uma análise, um treino ou um roteiro: commit e push.
+- **Roteiro aprovado = vai para a `main`.** Antes de aprovar, o dono sempre ajusta o roteiro e ensina
+  como trabalha (isso vira lição/regra). Quando ele aprovar ("aprovado", "pode subir", "fechou"),
+  marque o roteiro como `aprovado ⭐`, faça commit e push, abra um pull request da branch de trabalho
+  para a `main` e faça o merge — sem pedir nova confirmação. Assim a próxima sessão já começa com
+  tudo que foi aprendido. Nada vai para a `main` antes da aprovação.
 - `cookies.txt` nunca é commitado nem mostrado no chat.
 
 ## Estrutura

@@ -24,6 +24,8 @@ description: Cria um roteiro de vídeo curto com a mesma estrutura de um vídeo 
 - Preencha `templates/roteiro.md` e salve em `roteiros/AAAA-MM-DD-<tema>.md`.
 
 ## Entregar
+- Roteiro novo nasce com status `rascunho`. Quando o dono aprovar, siga a skill `treinar`
+  ("Roteiro aprovado"): status `aprovado ⭐`, pull request e merge na `main`.
 - Commit e push (`roteiro: <tema>`).
 - No chat: as 3 opções de gancho e a tabela cena a cena. Pergunte se quer ajustar algo; ajustes
   de gosto sobre roteiros também viram lição (skill `treinar`).
