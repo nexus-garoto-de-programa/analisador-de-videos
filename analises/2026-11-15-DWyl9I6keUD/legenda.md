@@ -1,4 +1,4 @@
-# Legenda do post — @gustavolleonel
+# Legenda e transcrição — @gustavolleonel
 
 - **Link:** https://www.instagram.com/reel/DWyl9I6keUD/
 - **Autor:** Gustavo Leonel (@gustavolleonel)
@@ -26,6 +26,33 @@ E você? O que tem achado da educação e do transporte escolar na nossa cidade 
 Comenta aqui embaixo, quero saber sua opinião! 👇
 
 #vitoriadesantoantao #educacao #gestaopublica #pernambuco #naopagueopato
+
+## Transcrição do vídeo
+
+Fala conferida com a legenda que aparece na tela (o arquivo veio em baixa resolução; trechos com dúvida estão marcados com [?]).
+
+| Tempo | Fala |
+|---|---|
+| 00:00–00:03 | Você já sentiu que vive em duas Vitórias diferentes? |
+| 00:03–00:09 | Uma é a Vitória do Instagram da prefeitura, toda azul, linda e sem nenhum problema. |
+| 00:09–00:19 | A outra é a Vitória real, aquela que cê sai de casa pra levar o seu filho no colégio e percebe: infelizmente, nossa cidade parou no tempo. |
+| 00:19–00:27 | Ei, ei [?], essa conta não fecha. Vitória elegeu dois educadores pra tomar conta da prefeitura, gente que tem escolas particulares de sucesso há décadas. |
+| 00:27–00:35 | Agora eu te pergunto: se o negócio deles brilha, por que a educação pública do município continua na mesma dificuldade, hein? |
+| 00:35–00:44 | Parece ser o mesmo de sempre, muito marketing pra pouca obra. Será incompetência ou porque escola pública de qualidade influencia diretamente nos negócios das famílias? |
+| 00:44 | *(preto e branco)* Será? |
+| 00:45 | Vou fazer um café. |
+| 00:46–00:52 | E os ônibus pra Recife praticamente sumiram, não foi? Agora é o povo se virando em grupos de carona. *(texto na tela: "\*ÔNIBUS DOS ESTUDANTES.")* |
+| 00:52–00:59 | Será coincidência o prefeito ter universidade em Vitória e o povo ir pra Recife? Será que isso atrapalha o negócio? |
+| 00:59 | *(preto e branco)* Será? |
+| 01:00–01:09 | Política é serviço, não é herança. Enquanto a gente espera o ônibus, parece que eles só pensam em tapear a gente até o final do ano pra eleger os filhos, né não? |
+| 01:09–01:19 | Meu amigo e minha amiga da Vitória, se os poderosos vivem no luxo e as famílias deles também, mas os alunos não têm melhoria no ensino e nem no transporte, é porque o sistema tá doente. |
+| 01:19–01:26 | A gente não pode aceitar que façam festa com o nosso futuro enquanto cuidam apenas dos próprios negócios, não é mesmo? |
+| 01:26–01:35 | Até porque Vitória elegeu eles pra cuidarem da cidade e não pra criar uma estrutura pra eleger os filhos, se manterem na política e serem bancados pela gente. |
+| 01:35–01:38 | E aí, você acha que a educação municipal vai melhorar em 2026? |
+| 01:38–01:40 | *(preto e branco)* Sabor educação. [?] |
+| 01:40–01:44 | Finalmente, é marketing ou obra? Comenta aqui embaixo. |
+| 01:44–01:50 | E você já sabe, segue a gente pra saber tudo que eles tentam esconder. Cheiro grande. |
+| 01:50–01:54 | *(tela final)* Me siga nas redes sociais! @gustavolleonel |
 
 ## Como a legenda está montada
 
